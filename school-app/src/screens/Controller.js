@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./home/Home";
 import Students from "./students/Students";
 import Overview from "./overview/Overview";
+import Messages from "./messages/Messages";
 
 class Controller extends Component {
   constructor(props) {
@@ -62,6 +63,17 @@ class Controller extends Component {
                   <Login {...props} baseUrl={this.baseUrl} />
                 ) : (
                   <Overview />
+                )
+              }
+            />
+             <Route
+              exact
+              path="/messages"
+              render={props =>
+                sessionStorage.getItem("access-token") === null ? (
+                  <Login {...props} baseUrl={this.baseUrl} />
+                ) : (
+                  <Messages />
                 )
               }
             />

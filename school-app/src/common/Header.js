@@ -86,7 +86,7 @@ class Header extends Component{
             <div>
             <Link style={{ textDecoration: 'none', color: 'white', paddingRight:'10px', paddingLeft:'10px'}} to="/students"><span className="header-logo">Students</span></Link>
             <Link style={{ textDecoration: 'none', color: 'white' , paddingRight:'10px', paddingLeft:'10px'}} to="/students"><span className="header-logo">Attendence</span></Link>
-            <Link style={{ textDecoration: 'none', color: 'white', paddingRight:'10px', paddingLeft:'10px'}} to="/students"><span className="header-logo">Notifications</span></Link>
+            <Link style={{ textDecoration: 'none', color: 'white', paddingRight:'10px', paddingLeft:'10px'}} to="/messages"><span className="header-logo">Messages</span></Link>
               </div><div className={classes.grow}>
             
               </div>
@@ -104,7 +104,7 @@ class Header extends Component{
                   }}/>
               </div> */
             }
-            {(screen === "Home" || screen === "Profile" || screen === "Students" || screen === "Overview")  &&
+            {(screen === "Home" || screen === "Profile" || screen === "Students" || screen === "Overview"|| screen === "Messages")  &&
               <div>
                 <IconButton onClick={this.handleClick}>
                   <Avatar alt="Profile Pic" src={this.props.userProfileUrl} className={classes.avatar} style={{border: "1px solid #fff"}}/>
