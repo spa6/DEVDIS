@@ -1,52 +1,80 @@
 import React, { Component } from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect
-} from "react-router-dom";
-import Home from "../screens/home/Home";
+import Login from "./login/Login";
+import Profile from "./profile/Profile";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from "./home/Home";
+import Students from "./students/Students";
+import Overview from "./overview/Overview";
 
 class Controller extends Component {
   constructor(props) {
     super(props);
-    this.baseUrl = "http://localhost:8080/api/";
+    this.baseUrl = "https://api.instagram.com/v1/";
+    this.state = {
+      loggedIn: sessionStorage.getItem("access-token") == null ? false : true
+    };
   }
 
   render() {
-    const hasLogin = sessionStorage.getItem("access-token") !== null;
     return (
       <Router>
         <div className="main-container">
           <Switch>
             <Route
               exact
-              path="/"
-              render={props => <Home {...props} baseUrl={this.baseUrl} />}
-            />
-            <Route
-              exact
               path="/home"
-              render={props => <Home {...props} baseUrl={this.baseUrl} />}
-            />
-            {/* <Route
-              exact
-              path="/checkout"
               render={props =>
-                hasLogin ? (
-                  <Checkout {...props} baseUrl={this.baseUrl} />
+                sessionStorage.getItem("access-token") === null ? (
+                  <Login {...props} baseUrl={this.baseUrl} />
                 ) : (
-                  <Redirect
-                    to={{ pathname: "/", state: { from: props.location } }}
-                  />
+                  <Home />
                 )
               }
-            /> */}
+            />
             <Route
               exact
               path="/profile"
-              render={props => <div>This is Profile page</div>}
-              status={404}
+              render={props =>
+                sessionStorage.getItem("access-token") === null ? (
+                  <Login {...props} baseUrl={this.baseUrl} />
+                ) : (
+                  <Profile />
+                )
+              }
+            />
+            <Route
+              exact
+              path="/students"
+              render={props =>
+                sessionStorage.getItem("access-token") === null ? (
+                  <Login {...props} baseUrl={this.baseUrl} />
+                ) : (
+                  <Students />
+                )
+              }
+            />
+
+            <Route
+              exact
+              path="/overview"
+              render={props =>
+                sessionStorage.getItem("access-token") === null ? (
+                  <Login {...props} baseUrl={this.baseUrl} />
+                ) : (
+                  <Overview />
+                )
+              }
+            />
+            <Route
+              exact
+              path="/"
+              render={props =>
+                sessionStorage.getItem("access-token") === null ? (
+                  <Login {...props} baseUrl={this.baseUrl} />
+                ) : (
+                  <Home />
+                )
+              }
             />
           </Switch>
         </div>
