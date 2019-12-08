@@ -69,7 +69,7 @@ class ProgressBarExample extends React.Component {
             </TableRow>
             <TableRow key="row4">
           <TableCell >Subject4</TableCell>
-                <TableCell ><ProgressBar percentage={this.state.percentage3} /></TableCell>
+    <TableCell ><ProgressBar percentage={this.state.percentage3}  /></TableCell>
             </TableRow>
           </TableBody>
           
@@ -105,13 +105,13 @@ class ProgressBarExample extends React.Component {
 const ProgressBar = (props) => {
   return (
       <div className="progress-bar">
-        <Filler percentage={props.percentage} />
+        <Filler percentage={props.percentage} /> 
       </div>
     )
 }
 
 const Filler = (props) => {
-  return <div className="filler" style={{ width: `${props.percentage}%` }} />
+  return <div className="filler" style={{ width: `${props.percentage}%` }} >{props.percentage}%</div>
 }
 
 export default withStyles(useStyles)(ProgressBarExample);
