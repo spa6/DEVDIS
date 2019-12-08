@@ -123,7 +123,7 @@ export default function BottomAppBar() {
                 <ListItemAvatar>
                   <Avatar alt="Profile Picture" src={person} />
                 </ListItemAvatar>
-                <ListItemText primary={primary} secondary={secondary} />
+                <ListItemText primary={primary} secondary={secondary}  onClick/>
               </ListItem>
             </React.Fragment>
           ))}
