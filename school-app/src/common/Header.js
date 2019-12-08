@@ -93,6 +93,7 @@ class Header extends Component {
             <div className={classes.grow1}></div>
             <div>
               {this.state.user !== "student" && (
+                <React.Fragment>
                 <Link
                   style={{
                     textDecoration: "none",
@@ -104,8 +105,21 @@ class Header extends Component {
                 >
                   <span className="header-logo">Students</span>
                 </Link>
+                <Link
+                style={{
+                  textDecoration: "none",
+                  color: "white",
+                  paddingRight: "10px",
+                  paddingLeft: "10px"
+                }}
+                to="/attendence"
+              >
+                <span className="header-logo">Attendence</span>
+              </Link>
+                </React.Fragment>
               )}
               {this.state.user == "student" && (
+                <React.Fragment>
                 <Link
                   style={{
                     textDecoration: "none",
@@ -117,18 +131,20 @@ class Header extends Component {
                 >
                   <span className="header-logo">Subjects</span>
                 </Link>
+                <Link
+                  style={{
+                    textDecoration: "none",
+                    color: "white",
+                    paddingRight: "10px",
+                    paddingLeft: "10px"
+                  }}
+                  to="/sattendence"
+                >
+                  <span className="header-logo">Attendence</span>
+                </Link>
+                </React.Fragment>
               )}
-              <Link
-                style={{
-                  textDecoration: "none",
-                  color: "white",
-                  paddingRight: "10px",
-                  paddingLeft: "10px"
-                }}
-                to="/attendence"
-              >
-                <span className="header-logo">Attendence</span>
-              </Link>
+              
               <Link
                 style={{
                   textDecoration: "none",

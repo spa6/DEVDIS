@@ -21,24 +21,20 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import FilterListIcon from '@material-ui/icons/FilterList';
 import Header from "../../common/Header";
 import Container from "@material-ui/core/Container";
-function createData(name, studentid, totaldays, presentdays, absentdays) {
-  return { name, studentid, totaldays, presentdays, absentdays };
+
+function createData(no, month, totaldays, presentdays, absentdays) {
+  return { no, month, totaldays, presentdays, absentdays };
 }
 
 const rows = [
-  createData('Cupcake', 305, 100, 67, 33),
-  createData('Donut', 452, 100, 91, 9),
-  createData('Eclair', 262, 100, 100, 0),
-  createData('Frozen yoghurt', 159, 100, 75, 25),
-  createData('Gingerbread', 356, 100, 49, 51),
-  createData('Honeycomb', 408, 100, 87, 13),
-  createData('Ice cream sandwich', 237, 100, 67, 33),
-  createData('Jelly Bean', 375, 100, 94, 6),
-  createData('KitKat', 518, 100, 65, 20),
-  createData('Lollipop', 392, 100, 98, 2),
-  createData('Marshmallow', 318, 100, 81, 19),
-  createData('Nougat', 360, 100, 83, 17),
-  createData('Oreo', 437, 100, 77, 23),
+  createData(1,'Jan', 25, 25, 0),
+  createData(2,'Feb', 24, 23, 1),
+  createData(3,'Mar', 23, 23, 0),
+  createData(4,'Apr', 24, 20, 4),
+  createData(5,'May', 26, 25, 1),
+  createData(6,'Jun', 24, 22, 2),
+  createData(7,'Jul', 22, 22, 0),
+  createData(8,'Aug', 25, 20, 5),
 ];
 
 function desc(a, b, orderBy) {
@@ -66,8 +62,8 @@ function getSorting(order, orderBy) {
 }
 
 const headCells = [
-  { id: 'name', numeric: false, disablePadding: true, label: 'Student Name' },
-  { id: 'studentid', numeric: true, disablePadding: false, label: 'Student Id' },
+  { id: 'no', numeric: true, disablePadding: true, label: 'No' },
+  { id: 'month', numeric: false, disablePadding: false, label: 'Month' },
   { id: 'totaldays', numeric: true, disablePadding: false, label: 'Total Days' },
   { id: 'presentdays', numeric: true, disablePadding: false, label: 'Present' },
   { id: 'absentdays', numeric: true, disablePadding: false, label: 'Absent' },
@@ -165,7 +161,7 @@ const EnhancedTableToolbar = props => {
         </Typography>
       ) : (
         <Typography className={classes.title} variant="h6" id="tableTitle">
-          Students Attendence
+          My Attendence
         </Typography>
       )}
 
@@ -220,7 +216,7 @@ const useStyles = makeStyles(theme => ({
 export default function EnhancedTable() {
   const classes = useStyles();
   const [order, setOrder] = React.useState('asc');
-  const [orderBy, setOrderBy] = React.useState('studentid');
+  const [orderBy, setOrderBy] = React.useState('no');
   const [selected, setSelected] = React.useState([]);
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
@@ -328,14 +324,14 @@ export default function EnhancedTable() {
                           inputProps={{ 'aria-labelledby': labelId }}
                         />
                       </TableCell>
-                      <TableCell component="th" id={labelId} scope="row" padding="none">
-                        {row.name}
+                      <TableCell component="th" id={labelId} scope="row" padding="none" align="right">
+                        {row.no}
                       </TableCell>
-                      <TableCell align="right">{row.studentid}</TableCell>
+                      <TableCell >{row.month}</TableCell>
                       <TableCell align="right">{row.totaldays}</TableCell>
                       <TableCell align="right">{row.presentdays}</TableCell>
                       <TableCell align="right">{row.absentdays}</TableCell>
-                      <TableCell align="right">{row.presentdays/row.totaldays * 100}</TableCell>
+                      <TableCell align="right">{Math.round(row.presentdays/row.totaldays * 100)}</TableCell>
                     </TableRow>
                   );
                 })}

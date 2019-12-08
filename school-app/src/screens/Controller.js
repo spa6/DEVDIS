@@ -7,6 +7,7 @@ import Students from "./students/Students";
 import Overview from "./overview/Overview";
 import Messages from "./messages/Messages";
 import Attendence from "./attendence/Attendence";
+import SAttendence from "./studentattendence/SAttendence";
 import Subjects from "./subjects/Subjects";
 
 class Controller extends Component {
@@ -76,6 +77,17 @@ class Controller extends Component {
                   <Login {...props} baseUrl={this.baseUrl} />
                 ) : (
                   <Attendence />
+                )
+              }
+            />
+             <Route
+              exact
+              path="/sattendence"
+              render={props =>
+                sessionStorage.getItem("access-token") === null ? (
+                  <Login {...props} baseUrl={this.baseUrl} />
+                ) : (
+                  <SAttendence />
                 )
               }
             />

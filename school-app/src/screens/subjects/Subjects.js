@@ -4,6 +4,8 @@ import MaterialTable from 'material-table';
 import { withStyles } from "@material-ui/styles";
 import { List } from "semantic-ui-react";
 import SubjectProgress from "../progress/Progress";
+
+import Container from "@material-ui/core/Container";
 const styles = theme => ({
 });
 
@@ -17,9 +19,9 @@ export default function MaterialTableDemo() {
           //userProfileUrl={this.state.profile_picture}
         />
         <div className="container">
-        
+        <Container fixed>
           <SubjectProgress></SubjectProgress>
-          
+          </Container>
         </div>
         </div>
     
