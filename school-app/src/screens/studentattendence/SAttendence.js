@@ -26,7 +26,7 @@ import ReactToExcel from 'react-html-table-to-excel';
 function createData(no, month, totaldays, presentdays, absentdays) {
   return { no, month, totaldays, presentdays, absentdays };
 }
-
+const tPercentage = 93;
 const rows = [
   createData(1,'Jan', 25, 25, 0),
   createData(2,'Feb', 24, 23, 1),
@@ -148,7 +148,7 @@ const useToolbarStyles = makeStyles(theme => ({
 
 const EnhancedTableToolbar = props => {
   const classes = useToolbarStyles();
-  const { numSelected } = props;
+  const { numSelected, aPercentage } = props;
 
   return (
     <Toolbar
@@ -162,7 +162,7 @@ const EnhancedTableToolbar = props => {
         </Typography>
       ) : (
         <Typography className={classes.title} variant="h6" id="tableTitle">
-          My Attendence
+          My Attendence - {tPercentage}%
         </Typography>
       )}
 
