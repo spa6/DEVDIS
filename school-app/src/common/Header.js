@@ -105,6 +105,19 @@ class Header extends Component {
                   <span className="header-logo">Students</span>
                 </Link>
               )}
+              {this.state.user == "student" && (
+                <Link
+                  style={{
+                    textDecoration: "none",
+                    color: "white",
+                    paddingRight: "10px",
+                    paddingLeft: "10px"
+                  }}
+                  to="/subjects"
+                >
+                  <span className="header-logo">Subjects</span>
+                </Link>
+              )}
               <Link
                 style={{
                   textDecoration: "none",
@@ -196,6 +209,11 @@ class Header extends Component {
 
   handleStudents = () => {
     this.props.history.push("/students");
+    this.handleClose();
+  };
+
+  handleSubjects = () => {
+    this.props.history.push("/subjects");
     this.handleClose();
   };
 
