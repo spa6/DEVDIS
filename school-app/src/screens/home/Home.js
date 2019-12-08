@@ -1,94 +1,91 @@
-import React, {Component} from 'react';
-import './Home.css';
-import Header from '../../common/Header';
-import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
-import CardMedia from '@material-ui/core/CardMedia';
-import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
-import IconButton from '@material-ui/core/IconButton';
-import Avatar from '@material-ui/core/Avatar';
-import {withStyles} from '@material-ui/core/styles';
-import FavoriteIconBorder from '@material-ui/icons/FavoriteBorder';
-import FavoriteIconFill from '@material-ui/icons/Favorite';
-import Typography from '@material-ui/core/Typography';
-import FormControl from '@material-ui/core/FormControl';
-import InputLabel from '@material-ui/core/InputLabel';
-import Input from '@material-ui/core/Input';
-import Button from '@material-ui/core/Button';
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-import {withRouter} from 'react-router-dom';
+import React, { Component } from "react";
+import "./Home.css";
+import Header from "../../common/Header";
+import Card from "@material-ui/core/Card";
+import CardHeader from "@material-ui/core/CardHeader";
+import CardMedia from "@material-ui/core/CardMedia";
+import CardContent from "@material-ui/core/CardContent";
+import CardActions from "@material-ui/core/CardActions";
+import IconButton from "@material-ui/core/IconButton";
+import Avatar from "@material-ui/core/Avatar";
+import { withStyles } from "@material-ui/core/styles";
+import FavoriteIconBorder from "@material-ui/icons/FavoriteBorder";
+import FavoriteIconFill from "@material-ui/icons/Favorite";
+import Typography from "@material-ui/core/Typography";
+import FormControl from "@material-ui/core/FormControl";
+import InputLabel from "@material-ui/core/InputLabel";
+import Input from "@material-ui/core/Input";
+import Button from "@material-ui/core/Button";
+import GridList from "@material-ui/core/GridList";
+import GridListTile from "@material-ui/core/GridListTile";
+import { withRouter } from "react-router-dom";
 import Overview from "../overview/Overview";
+import ImageScrole from "../../components/imagescrole/ImageScrole";
 
-const styles =  theme => ({
+const styles = theme => ({
   card: {
-    maxWidth: 1100,
+    maxWidth: 1100
   },
   avatar: {
-    margin: 10,
+    margin: 10
   },
   media: {
-    height:0,
-    paddingTop: '56.25%', // 16:9
+    height: 0,
+    paddingTop: "56.25%" // 16:9
   },
   formControl: {
-    display:'flex',
-    flexDirection:'row',
-    justifyContent:'space-between',
-    alignItems:'baseline',
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "baseline"
   },
-  comment:{
-    display:'flex',
-    alignItems:'center'
+  comment: {
+    display: "flex",
+    alignItems: "center"
   },
-  hr:{
-    marginTop:'10px',
-    borderTop:'2px solid #f2f2f2'
+  hr: {
+    marginTop: "10px",
+    borderTop: "2px solid #f2f2f2"
   },
-  gridList:{
+  gridList: {
     width: 1100,
-    height: 'auto',
-    overflowY: 'auto',
+    height: "auto",
+    overflowY: "auto"
   },
-  grid:{
-    display:'flex',
-    justifyContent:'center',
-    alignItems:'center',
-    marginTop:90
+  grid: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 90
   }
 });
 
-class Home extends Component{
-
+class Home extends Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
       data: [],
-      filteredData:[],
-      userData:{},
-      likeSet:new Set(),
-      comments:{},
-      currrentComment:"",
+      filteredData: [],
+      userData: {},
+      likeSet: new Set(),
+      comments: {},
+      currrentComment: "",
       access_token: sessionStorage.getItem("access-token"),
       baseUrl: "https://api.instagram.com/v1/"
-    }
-}
-  componentDidMount(){
+    };
+  }
+  componentDidMount() {
     this.getUserInfo();
     this.getMediaData();
   }
 
-  render(){
-    const{classes} = this.props;
-    return(
+  render() {
+    const { classes } = this.props;
+    return (
       <div>
-        <Header
-          userProfileUrl={this.state.userData.profile_picture}          
-          screen={"Home"}
-          searchHandler={this.onSearchEntered}/>
-          
+        <Header screen={"Home"} searchHandler={this.onSearchEntered} />
+        <ImageScrole />
         {/* <div className={classes.grid}>
           <GridList className={classes.gridList} cellHeight={'auto'}>
             {this.state.filteredData.map(item => (
@@ -108,115 +105,127 @@ class Home extends Component{
     );
   }
 
-  onSearchEntered = (value) =>{
+  onSearchEntered = value => {
     let filteredData = this.state.data;
-    filteredData = filteredData.filter((data) =>{
+    filteredData = filteredData.filter(data => {
       let string = data.caption.text.toLowerCase();
       let subString = value.toLowerCase();
       return string.includes(subString);
-    })
+    });
     this.setState({
       filteredData
-    })
-  }
+    });
+  };
 
-  likeClickHandler = (id) =>{
-    var foundItem = this.state.data.find((item) => {
+  likeClickHandler = id => {
+    var foundItem = this.state.data.find(item => {
       return item.id === id;
-    })
+    });
 
     if (typeof foundItem !== undefined) {
       if (!this.state.likeSet.has(id)) {
         foundItem.likes.count++;
-        this.setState(({likeSet}) => ({
-          likeSet:new Set(likeSet.add(id))
-        }))
-      }else {
+        this.setState(({ likeSet }) => ({
+          likeSet: new Set(likeSet.add(id))
+        }));
+      } else {
         foundItem.likes.count--;
-        this.setState(({likeSet}) =>{
+        this.setState(({ likeSet }) => {
           const newLike = new Set(likeSet);
           newLike.delete(id);
 
           return {
-            likeSet:newLike
+            likeSet: newLike
           };
         });
       }
     }
-  }
+  };
 
-  addCommentClickHandler = (id)=>{
-    if (this.state.currentComment === "" || typeof this.state.currentComment === undefined) {
+  addCommentClickHandler = id => {
+    if (
+      this.state.currentComment === "" ||
+      typeof this.state.currentComment === undefined
+    ) {
       return;
     }
 
-    let commentList = this.state.comments.hasOwnProperty(id)?
-      this.state.comments[id].concat(this.state.currentComment): [].concat(this.state.currentComment);
+    let commentList = this.state.comments.hasOwnProperty(id)
+      ? this.state.comments[id].concat(this.state.currentComment)
+      : [].concat(this.state.currentComment);
 
     this.setState({
-      comments:{
+      comments: {
         ...this.state.comments,
-        [id]:commentList
+        [id]: commentList
       },
-      currentComment:''
-    })
-  }
-
-
-  commentChangeHandler = (e) => {
-    this.setState({
-      currentComment:e.target.value
+      currentComment: ""
     });
-  }
+  };
+
+  commentChangeHandler = e => {
+    this.setState({
+      currentComment: e.target.value
+    });
+  };
 
   getUserInfo = () => {
     let that = this;
-    let url = this.state.baseUrl + "users/self/?access_token=" + this.state.access_token;
-    return fetch(url,{
-      method:'GET',
-    }).then((response) =>{
+    let url =
+      this.state.baseUrl +
+      "users/self/?access_token=" +
+      this.state.access_token;
+    return fetch(url, {
+      method: "GET"
+    })
+      .then(response => {
         return response.json();
-    }).then((jsonResponse) =>{
-      that.setState({
-        userData:jsonResponse.data
+      })
+      .then(jsonResponse => {
+        that.setState({
+          userData: jsonResponse.data
+        });
+      })
+      .catch(error => {
+        console.log("error user data", error);
       });
-    }).catch((error) => {
-      console.log('error user data',error);
-    });
-  }
+  };
 
   getMediaData = () => {
     let that = this;
-    let url = this.state.baseUrl +
-    "users/self/media/recent?access_token=" +
-    this.state.access_token;
-    return fetch(url,{
-      method:'GET',
-    }).then((response) =>{
+    let url =
+      this.state.baseUrl +
+      "users/self/media/recent?access_token=" +
+      this.state.access_token;
+    return fetch(url, {
+      method: "GET"
+    })
+      .then(response => {
         return response.json();
-    }).then((jsonResponse) =>{
-      that.setState({
-        data:jsonResponse.data,
-        filteredData:jsonResponse.data
+      })
+      .then(jsonResponse => {
+        that.setState({
+          data: jsonResponse.data,
+          filteredData: jsonResponse.data
+        });
+      })
+      .catch(error => {
+        console.log("error user data", error);
       });
-    }).catch((error) => {
-      console.log('error user data',error);
-    });
-  }
-
+  };
 }
 
-class HomeItem extends Component{
-  constructor(){
+class HomeItem extends Component {
+  constructor() {
     super();
     this.state = {
-      isLiked : false,
-      comment:'',
-    }
+      isLiked: false,
+      comment: ""
+    };
   }
 
-  render(){
-    const {classes, item, comments} = this.props;
+  render() {
+    const { classes, item, comments } = this.props;
 
     let createdTime = new Date(0);
     createdTime.setUTCSeconds(item.created_time);
@@ -228,17 +237,21 @@ class HomeItem extends Component{
     let MM = createdTime.getMinutes();
     let ss = createdTime.getSeconds();
 
-    let time = dd+"/"+mm+"/"+yyyy+" "+HH+":"+MM+":"+ss;
-    let hashTags = item.tags.map(hash =>{
-      return "#"+hash;
+    let time = dd + "/" + mm + "/" + yyyy + " " + HH + ":" + MM + ":" + ss;
+    let hashTags = item.tags.map(hash => {
+      return "#" + hash;
     });
-    return(
+    return (
       <div className="home-item-main-container">
         <Overview />
         <Card className={classes.card}>
           <CardHeader
             avatar={
-              <Avatar alt="User Profile Pic" src={item.user.profile_picture} className={classes.avatar}/>
+              <Avatar
+                alt="User Profile Pic"
+                src={item.user.profile_picture}
+                className={classes.avatar}
+              />
             }
             title={item.user.username}
             subheader={time}
@@ -246,50 +259,59 @@ class HomeItem extends Component{
           <CardContent>
             <CardMedia
               className={classes.media}
-              image={item.images.standard_resolution.url}		 
+              image={item.images.standard_resolution.url}
               title={item.caption != null ? item.caption.text : ""}
             />
-            <div  className={classes.hr}>
+            <div className={classes.hr}>
               <Typography component="p">
-              {item.caption && item.caption.text}
+                {item.caption && item.caption.text}
               </Typography>
-              <Typography style={{color:'#4dabf5'}} component="p" >
-                {hashTags.join(' ')}
+              <Typography style={{ color: "#4dabf5" }} component="p">
+                {hashTags.join(" ")}
               </Typography>
             </div>
           </CardContent>
 
-            <CardActions>
-              <IconButton aria-label="Add to favorites" onClick={this.onLikeClicked.bind(this,item.id)}>
-                {this.state.isLiked && <FavoriteIconFill style={{color:'#F44336'}}/>}
-                {!this.state.isLiked && <FavoriteIconBorder/>}
-              </IconButton>
-              <Typography component="p">
-                {item.likes.count} Likes
-              </Typography>
-            </CardActions>
+          <CardActions>
+            <IconButton
+              aria-label="Add to favorites"
+              onClick={this.onLikeClicked.bind(this, item.id)}
+            >
+              {this.state.isLiked && (
+                <FavoriteIconFill style={{ color: "#F44336" }} />
+              )}
+              {!this.state.isLiked && <FavoriteIconBorder />}
+            </IconButton>
+            <Typography component="p">{item.likes.count} Likes</Typography>
+          </CardActions>
 
-            <CardContent>
-            {comments.hasOwnProperty(item.id) && comments[item.id].map((comment, index)=>{
-              return(
-                <div key={index} className="row">
-                  <Typography component="p" style={{fontWeight:'bold'}}>
-                    {sessionStorage.getItem('username')}:
-                  </Typography>
-                  <Typography component="p" >
-                    {comment}
-                  </Typography>
-                </div>
-              )
-            })}
+          <CardContent>
+            {comments.hasOwnProperty(item.id) &&
+              comments[item.id].map((comment, index) => {
+                return (
+                  <div key={index} className="row">
+                    <Typography component="p" style={{ fontWeight: "bold" }}>
+                      {sessionStorage.getItem("username")}:
+                    </Typography>
+                    <Typography component="p">{comment}</Typography>
+                  </div>
+                );
+              })}
             <div className={classes.formControl}>
-              <FormControl style={{flexGrow:1}}>
+              <FormControl style={{ flexGrow: 1 }}>
                 <InputLabel htmlFor="comment">Add Comment</InputLabel>
-                <Input id="comment" value={this.state.comment} onChange={this.commentChangeHandler}/>
+                <Input
+                  id="comment"
+                  value={this.state.comment}
+                  onChange={this.commentChangeHandler}
+                />
               </FormControl>
               <FormControl>
-                <Button onClick={this.onAddCommentClicked.bind(this,item.id)}
-                   variant="contained" color="primary">
+                <Button
+                  onClick={this.onAddCommentClicked.bind(this, item.id)}
+                  variant="contained"
+                  color="primary"
+                >
                   ADD
                 </Button>
               </FormControl>
@@ -297,38 +319,38 @@ class HomeItem extends Component{
           </CardContent>
         </Card>
       </div>
-    )
+    );
   }
 
-  onLikeClicked = (id) => {
+  onLikeClicked = id => {
     if (this.state.isLiked) {
       this.setState({
-        isLiked:false
+        isLiked: false
       });
-    }else {
+    } else {
       this.setState({
-        isLiked:true
+        isLiked: true
       });
     }
-    this.props.onLikedClicked(id)
-  }
+    this.props.onLikedClicked(id);
+  };
 
-  commentChangeHandler = (e) => {
+  commentChangeHandler = e => {
     this.setState({
-      comment:e.target.value,
+      comment: e.target.value
     });
     this.props.commentChangeHandler(e);
-  }
+  };
 
-  onAddCommentClicked = (id) => {
+  onAddCommentClicked = id => {
     if (this.state.comment === "" || typeof this.state.comment === undefined) {
       return;
     }
     this.setState({
-      comment:""
+      comment: ""
     });
     this.props.onAddCommentClicked(id);
-  }
+  };
 }
 
 export default withStyles(styles)(withRouter(Home));

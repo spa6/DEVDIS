@@ -67,7 +67,7 @@ class Controller extends Component {
                 )
               }
             />
-             <Route
+            <Route
               exact
               path="/attendence"
               render={props =>
@@ -78,7 +78,7 @@ class Controller extends Component {
                 )
               }
             />
-             <Route
+            <Route
               exact
               path="/messages"
               render={props =>
