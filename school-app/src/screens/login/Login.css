@@ -1,42 +1,42 @@
 .app-header {
-    background-color: #263238;
-    height: 36px;
-    padding: 8px 32px 8px 16px;
+  background-color: #263238;
+  min-height: 73px;
+  /* padding: 8px 32px 8px 16px; */
 }
 
 .login-button {
-    float: right;
+  float: right;
 }
 
 .logo-text {
-    color: #fff;
-    font-size: 18px;
-    vertical-align: middle;
-  }
+  color: #fff;
+  font-size: 18px;
+  vertical-align: middle;
+}
 
 .dispNone {
-      display: none;
+  display: none;
 }
 
 .dispBlock {
-    display: block;
+  display: block;
 }
 
-.red{
-    color:red;
+.red {
+  color: red;
 }
 
-.text-box{
-	width:250%;
-    float:right;
-    margin-bottom:20px;
+.text-box {
+  width: 250%;
+  float: right;
+  margin-bottom: 20px;
 }
 
-.login-text{
-    font-size: 20px;
-    margin-bottom:20px;
+.login-text {
+  font-size: 20px;
+  margin-bottom: 20px;
 }
 
 .no-border {
-    box-shadow: none!important;
+  box-shadow: none !important;
 }

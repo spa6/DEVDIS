@@ -17,7 +17,8 @@
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.0.4",
     "semantic-ui-react": "latest",
-    "typeface-roboto": "0.0.75"
+    "typeface-roboto": "0.0.75",
+    "react-responsive-carousel": "^3.1.51"
   },
   "scripts": {
     "start": "react-scripts start",
