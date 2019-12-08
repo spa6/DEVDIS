@@ -334,7 +334,7 @@ class Messages extends Component {
                     >
                       <Grid item>
                         <FormControl className="formControl">
-                          <InputLabel htmlFor="addcomment">Replay </InputLabel>
+                          <InputLabel htmlFor="addcomment">Reply </InputLabel>
                           <Input
                             id="addcomment"
                             type="text"
@@ -349,7 +349,7 @@ class Messages extends Component {
                           color="primary"
                           onClick={this.addCommentClickHandler}
                         >
-                          ADD
+                          SEND
                         </Button>
                       </Grid>
                     </Grid>
