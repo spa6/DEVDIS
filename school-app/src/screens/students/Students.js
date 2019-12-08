@@ -3,6 +3,7 @@ import Header from "../../common/Header";
 import MaterialTable from 'material-table';
 import ReactToExcel from 'react-html-table-to-excel';
 import { withStyles } from "@material-ui/styles";
+import Container from "@material-ui/core/Container";
 const styles = theme => ({
 });
 
@@ -41,6 +42,7 @@ export default function MaterialTableDemo() {
           //userProfileUrl={this.state.profile_picture}
         />
         <div className="container">
+        <Container fixed>
         <MaterialTable
       title="Student Details"
       columns={state.columns}
@@ -84,6 +86,8 @@ export default function MaterialTableDemo() {
           }),
       }}
     />
+
+    </Container>
         </div>
         </div>
     

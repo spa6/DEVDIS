@@ -179,6 +179,8 @@ const EnhancedTableToolbar = props => {
           </IconButton>
         </Tooltip>
       )}
+      
+      <ReactToExcel table="attendence_table" filename="attendence" buttonText="export"/>
     </Toolbar>
   );
 };
@@ -288,7 +290,6 @@ export default function EnhancedTable() {
         <EnhancedTableToolbar numSelected={selected.length} />
         
         <div className={classes.tableWrapper}>
-        <ReactToExcel table="attendence_table" fileName="attendence" buttonText="export"/>
           <Table
             className={classes.table}
             aria-labelledby="tableTitle"
@@ -315,11 +316,11 @@ export default function EnhancedTable() {
                   return (
                     <TableRow
                       hover
-                      onClick={event => handleClick(event, row.name)}
+                      onClick={event => handleClick(event, row.month)}
                       role="checkbox"
                       aria-checked={isItemSelected}
                       tabIndex={-1}
-                      key={row.name}
+                      key={row.month}
                       selected={isItemSelected}
                     >
                       <TableCell padding="checkbox">
@@ -357,10 +358,10 @@ export default function EnhancedTable() {
           onChangeRowsPerPage={handleChangeRowsPerPage}
         />
       </Paper>
-      <FormControlLabel
+      {/* <FormControlLabel
         control={<Switch checked={dense} onChange={handleChangeDense} />}
         label="Dense padding"
-      />
+      /> */}
     </div>
     </Container>
     </div>
