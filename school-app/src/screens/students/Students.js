@@ -30,6 +30,8 @@ export default function MaterialTableDemo() {
         birthCity: 34,
       },
     ],
+    options: 
+      { exportAllData: true, exportButton: true },
   });
 
   return (
@@ -43,6 +45,7 @@ export default function MaterialTableDemo() {
       title="Student Details"
       columns={state.columns}
       data={state.data}
+      options={state.options}
       editable={{
         onRowAdd: newData =>
           new Promise(resolve => {

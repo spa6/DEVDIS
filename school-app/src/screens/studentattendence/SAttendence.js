@@ -21,6 +21,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import FilterListIcon from '@material-ui/icons/FilterList';
 import Header from "../../common/Header";
 import Container from "@material-ui/core/Container";
+import ReactToExcel from 'react-html-table-to-excel';
 
 function createData(no, month, totaldays, presentdays, absentdays) {
   return { no, month, totaldays, presentdays, absentdays };
@@ -285,12 +286,15 @@ export default function EnhancedTable() {
     <div className={classes.root}>
       <Paper className={classes.paper}>
         <EnhancedTableToolbar numSelected={selected.length} />
+        
         <div className={classes.tableWrapper}>
+        <ReactToExcel table="attendence_table" fileName="attendence" buttonText="export"/>
           <Table
             className={classes.table}
             aria-labelledby="tableTitle"
             size={dense ? 'small' : 'medium'}
             aria-label="enhanced table"
+            id="attendence_table"
           >
             <EnhancedTableHead
               classes={classes}
