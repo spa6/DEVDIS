@@ -21,11 +21,12 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import FilterListIcon from '@material-ui/icons/FilterList';
 import Header from "../../common/Header";
 import Container from "@material-ui/core/Container";
+import ReactToExcel from 'react-html-table-to-excel';
 
 function createData(no, month, totaldays, presentdays, absentdays) {
   return { no, month, totaldays, presentdays, absentdays };
 }
-
+const tPercentage = 93;
 const rows = [
   createData(1,'Jan', 25, 25, 0),
   createData(2,'Feb', 24, 23, 1),
@@ -147,7 +148,7 @@ const useToolbarStyles = makeStyles(theme => ({
 
 const EnhancedTableToolbar = props => {
   const classes = useToolbarStyles();
-  const { numSelected } = props;
+  const { numSelected, aPercentage } = props;
 
   return (
     <Toolbar
@@ -161,7 +162,7 @@ const EnhancedTableToolbar = props => {
         </Typography>
       ) : (
         <Typography className={classes.title} variant="h6" id="tableTitle">
-          My Attendence
+          My Attendence - {tPercentage}%
         </Typography>
       )}
 
@@ -178,6 +179,8 @@ const EnhancedTableToolbar = props => {
           </IconButton>
         </Tooltip>
       )}
+      
+      <ReactToExcel table="attendence_table" filename="attendence" buttonText="export"/>
     </Toolbar>
   );
 };
@@ -285,12 +288,14 @@ export default function EnhancedTable() {
     <div className={classes.root}>
       <Paper className={classes.paper}>
         <EnhancedTableToolbar numSelected={selected.length} />
+        
         <div className={classes.tableWrapper}>
           <Table
             className={classes.table}
             aria-labelledby="tableTitle"
             size={dense ? 'small' : 'medium'}
             aria-label="enhanced table"
+            id="attendence_table"
           >
             <EnhancedTableHead
               classes={classes}
@@ -311,11 +316,11 @@ export default function EnhancedTable() {
                   return (
                     <TableRow
                       hover
-                      onClick={event => handleClick(event, row.name)}
+                      onClick={event => handleClick(event, row.month)}
                       role="checkbox"
                       aria-checked={isItemSelected}
                       tabIndex={-1}
-                      key={row.name}
+                      key={row.month}
                       selected={isItemSelected}
                     >
                       <TableCell padding="checkbox">
@@ -353,10 +358,10 @@ export default function EnhancedTable() {
           onChangeRowsPerPage={handleChangeRowsPerPage}
         />
       </Paper>
-      <FormControlLabel
+      {/* <FormControlLabel
         control={<Switch checked={dense} onChange={handleChangeDense} />}
         label="Dense padding"
-      />
+      /> */}
     </div>
     </Container>
     </div>

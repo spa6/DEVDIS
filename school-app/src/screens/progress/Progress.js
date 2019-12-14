@@ -119,7 +119,11 @@ const ProgressBar = props => {
 };
 
 const Filler = props => {
-  return <div className="filler" style={{ width: `${props.percentage}%` }} />;
+  return (
+    <div className="filler" style={{ width: `${props.percentage}%` }}>
+      {props.percentage}%
+    </div>
+  );
 };
 
 export default withStyles(useStyles)(ProgressBarExample);

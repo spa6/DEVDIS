@@ -173,7 +173,8 @@ class Header extends Component {
               screen === "Students" ||
               screen === "Overview" ||
               screen === "Messages" ||
-              screen === "Attendence") && (
+              screen === "Attendence"||
+              screen === "Subjects") && (
               <div>
                 <IconButton onClick={this.handleClick}>
                   <Avatar

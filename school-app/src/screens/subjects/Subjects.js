@@ -19,6 +19,7 @@ export default function MaterialTableDemo() {
           //userProfileUrl={this.state.profile_picture}
         />
         <div className="container">
+          <br></br>
         <Container fixed>
           <SubjectProgress></SubjectProgress>
           </Container>

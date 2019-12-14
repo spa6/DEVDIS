@@ -3,6 +3,7 @@ import Header from "../../common/Header";
 import MaterialTable from "material-table";
 import ReactToExcel from "react-html-table-to-excel";
 import { withStyles } from "@material-ui/styles";
+import Container from "@material-ui/core/Container";
 const styles = theme => ({});
 
 export default function MaterialTableDemo() {
@@ -29,7 +30,8 @@ export default function MaterialTableDemo() {
       { name: "China abbai", surname: "V", birthYear: 1965, birthCity: 63 },
       { name: "Latha", surname: "Ch", birthYear: 1984, birthCity: 63 },
       { name: "Pullarao", surname: "V", birthYear: 1962, birthCity: 63 }
-    ]
+    ],
+    options: { exportAllData: true, exportButton: true }
   });
 
   return (
