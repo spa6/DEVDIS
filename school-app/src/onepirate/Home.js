@@ -11,12 +11,13 @@ import ProductCTA from "./modules/views/ProductCTA";
 import AppAppBar from "./modules/views/AppAppBar";
 import Header from "../common/Header";
 import SchoolIntro from "./modules/views/SchoolIntro";
+import Login from "../screens/login/Login";
 
 function Index() {
   return (
     <React.Fragment>
       {/* <AppAppBar /> */}
-      <Header screen={"Home"} />
+      <Header screen={"Website"} />
       <ProductHero />
       <SchoolIntro />
       <ProductValues />
