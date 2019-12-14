@@ -2,13 +2,15 @@ import React, { Component } from "react";
 import Login from "./login/Login";
 import Profile from "./profile/Profile";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./home/Home";
+// import Home from "./home/Home";
 import Students from "./students/Students";
 import Overview from "./overview/Overview";
 import Messages from "./messages/Messages";
 import Attendence from "./attendence/Attendence";
 import SAttendence from "./studentattendence/SAttendence";
 import Subjects from "./subjects/Subjects";
+import Home from "../onepirate/Home";
+import GallaryHome from "../onepirate/GallaryHome";
 
 class Controller extends Component {
   constructor(props) {
@@ -80,7 +82,7 @@ class Controller extends Component {
                 )
               }
             />
-             <Route
+            <Route
               exact
               path="/sattendence"
               render={props =>
@@ -102,7 +104,7 @@ class Controller extends Component {
                 )
               }
             />
-             <Route
+            <Route
               exact
               path="/messages"
               render={props =>
@@ -113,17 +115,9 @@ class Controller extends Component {
                 )
               }
             />
-            <Route
-              exact
-              path="/"
-              render={props =>
-                sessionStorage.getItem("access-token") === null ? (
-                  <Login {...props} baseUrl={this.baseUrl} />
-                ) : (
-                  <Home />
-                )
-              }
-            />
+
+            <Route path="/gallary/*" render={GallaryHome} />
+            <Route exact path="/" render={Home} />
           </Switch>
         </div>
       </Router>

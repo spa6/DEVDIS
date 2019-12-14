@@ -1,64 +1,94 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import Button from '../components/Button';
-import Typography from '../components/Typography';
-import ProductHeroLayout from './ProductHeroLayout';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core/styles";
+import Button from "../components/Button";
+import Typography from "../components/Typography";
+import Admission from "../components/Admission";
+import ProductHeroLayout from "./ProductHeroLayout";
 
-const backgroundImage =
-  'school.PNG';
+const backgroundImage = "school.PNG";
 
 const styles = theme => ({
   background: {
     backgroundImage: `url(${backgroundImage})`,
-    backgroundColor: '#7fc7d9', // Average color of the background image.
-    backgroundPosition: 'center',
+    backgroundColor: "#7fc7d9", // Average color of the background image.
+    backgroundPosition: "center"
   },
   button: {
-    minWidth: 200,
+    minWidth: 200
   },
   h5: {
     marginBottom: theme.spacing(4),
     marginTop: theme.spacing(4),
-    [theme.breakpoints.up('sm')]: {
-      marginTop: theme.spacing(10),
-    },
+    [theme.breakpoints.up("sm")]: {
+      marginTop: theme.spacing(10)
+    }
   },
   more: {
-    marginTop: theme.spacing(2),
-  },
+    marginTop: theme.spacing(2)
+  }
 });
 
-function ProductHero(props) {
-  const { classes } = props;
+class ProductHero extends Component {
+  constructor() {
+    super();
+    this.state = {
+      modalIsOpen: false
+    };
+  }
+  closeLoginModalHandler = () => {
+    this.setState({ modalIsOpen: false });
+  };
+  openLoginModalHandler = () => {
+    this.setState({
+      modalIsOpen: true
+    });
+  };
 
-  return (
-    <ProductHeroLayout backgroundClassName={classes.background}>
-      {/* Increase the network loading priority of the background image. */}
-      <img style={{ display: 'none' }} src={backgroundImage} alt="increase priority" />
-      <Typography color="inherit" align="center" variant="h2" marked="center">
-        Where Passion Meets Education
-      </Typography>
-      <Typography color="inherit" align="center" variant="h5" className={classes.h5}>
-        Building a community of life long learners!
-      </Typography>
-      <Button
-        color="secondary"
-        variant="contained"
-        size="large"
-        className={classes.button}
-        component="a"
-        href="/premium-themes/onepirate/sign-up/"
-      >
-        ADMISSSIONS ENQUIRY
-      </Button>
-      
-    </ProductHeroLayout>
-  );
+  render() {
+    const { classes } = this.props;
+    const { modalIsOpen } = this.state;
+
+    return (
+      <ProductHeroLayout backgroundClassName={classes.background}>
+        {/* Increase the network loading priority of the background image. */}
+        <img
+          style={{ display: "none" }}
+          src={backgroundImage}
+          alt="increase priority"
+        />
+        <Typography color="inherit" align="center" variant="h2" marked="center">
+          Where Passion Meets Education
+        </Typography>
+        <Typography
+          color="inherit"
+          align="center"
+          variant="h5"
+          className={classes.h5}
+        >
+          Building a community of life long learners!
+        </Typography>
+        <Button
+          color="secondary"
+          variant="contained"
+          size="large"
+          className={classes.button}
+          component="a"
+          onClick={this.openLoginModalHandler}
+        >
+          ADMISSSIONS ENQUIRY
+        </Button>
+        <Admission
+          modalIsOpen={modalIsOpen}
+          closeLoginModalHandler={this.closeLoginModalHandler}
+        />
+      </ProductHeroLayout>
+    );
+  }
 }
 
 ProductHero.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(ProductHero);
