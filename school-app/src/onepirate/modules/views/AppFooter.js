@@ -131,26 +131,23 @@ export default function AppFooter() {
               ))}
             </TextField>
           </Grid>
-          <Grid item>
-            <Typography variant="caption">
-              {'Icons made by '}
-              <Link href="https://www.freepik.com" rel="sponsored" title="Freepik">
-                Freepik
-              </Link>
-              {' from '}
-              <Link href="https://www.flaticon.com" rel="sponsored" title="Flaticon">
-                www.flaticon.com
-              </Link>
-              {' is licensed by '}
-              <Link
-                href="https://creativecommons.org/licenses/by/3.0/"
-                title="Creative Commons BY 3.0"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                CC 3.0 BY
-              </Link>
+          <Grid >
+            <Typography variant="h6" marked="left" gutterBottom>
+              Contact Us
             </Typography>
+            <TextField
+              select
+              SelectProps={{
+                native: true,
+              }}
+              className={classes.language}
+            >
+              {LANGUAGES.map(language => (
+                <option value={language.code} key={language.code}>
+                  {language.name}
+                </option>
+              ))}
+            </TextField>
           </Grid>
         </Grid>
       </Container>

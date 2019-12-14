@@ -92,7 +92,7 @@ class Header extends Component {
             </Link>
             <div className={classes.grow1}></div>
             <div>
-              {this.state.user !== "student" && (
+              {(this.state.user !== "student" && screen != "Website") && (
                 <React.Fragment>
                   <Link
                     style={{
@@ -145,6 +145,7 @@ class Header extends Component {
                 </React.Fragment>
               )}
 
+{( screen != "Website") && (
               <Link
                 style={{
                   textDecoration: "none",
@@ -154,8 +155,10 @@ class Header extends Component {
                 }}
                 to="/messages"
               >
+               
                 <span className="header-logo">Messages</span>
               </Link>
+               )}
             </div>
             <div className={classes.grow}></div>
             <div></div>
