@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import Button from '../components/Button';
 import Typography from '../components/Typography';
+import ImageScrole from "../components/imagescrole/ImageScrole";
 
 const styles = theme => ({
   root: {
@@ -57,57 +58,12 @@ function ProductHowItWorks(props) {
   return (
     <section className={classes.root}>
       <Container className={classes.container}>
-        <img
-          src="/static/themes/onepirate/productCurvyLines.png"
-          className={classes.curvyLines}
-          alt="curvy lines"
-        />
-        <Typography variant="h4" marked="center" className={classes.title} component="h2">
-          How it works
+       
+        <Typography variant="h4" marked="center"  component="h6">
+          Testimonials
         </Typography>
         <div>
-          <Grid container spacing={5}>
-            <Grid item xs={12} md={4}>
-              <div className={classes.item}>
-                <div className={classes.number}>1.</div>
-                <img
-                  src="/static/themes/onepirate/productHowItWorks1.svg"
-                  alt="suitcase"
-                  className={classes.image}
-                />
-                <Typography variant="h5" align="center">
-                  Appointment every Wednesday 9am.
-                </Typography>
-              </div>
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <div className={classes.item}>
-                <div className={classes.number}>2.</div>
-                <img
-                  src="/static/themes/onepirate/productHowItWorks2.svg"
-                  alt="graph"
-                  className={classes.image}
-                />
-                <Typography variant="h5" align="center">
-                  First come, first served. Our offers are in limited quantities, so be quick.
-                </Typography>
-              </div>
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <div className={classes.item}>
-                <div className={classes.number}>3.</div>
-                <img
-                  src="/static/themes/onepirate/productHowItWorks3.svg"
-                  alt="clock"
-                  className={classes.image}
-                />
-                <Typography variant="h5" align="center">
-                  {'New offers every week. New experiences, new surprises. '}
-                  {'Your Sundays will no longer be alike.'}
-                </Typography>
-              </div>
-            </Grid>
-          </Grid>
+        <ImageScrole />
         </div>
         <Button
           color="secondary"

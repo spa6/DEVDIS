@@ -10,6 +10,7 @@ import ProductHowItWorks from "./modules/views/ProductHowItWorks";
 import ProductCTA from "./modules/views/ProductCTA";
 import AppAppBar from "./modules/views/AppAppBar";
 import Header from "../common/Header";
+import SchoolIntro from "./modules/views/SchoolIntro";
 
 function Index() {
   return (
@@ -17,6 +18,7 @@ function Index() {
       {/* <AppAppBar /> */}
       <Header screen={"Home"} />
       <ProductHero />
+      <SchoolIntro />
       <ProductValues />
       <ProductCategories />
       <ProductHowItWorks />
