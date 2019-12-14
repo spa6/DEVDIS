@@ -21,6 +21,9 @@ import GridListTile from "@material-ui/core/GridListTile";
 import { withRouter } from "react-router-dom";
 import Overview from "../overview/Overview";
 import ImageScrole from "../../components/imagescrole/ImageScrole";
+import Grid from "@material-ui/core/Grid";
+import Divider from "@material-ui/core/Divider";
+import Container from "@material-ui/core/Container";
 
 const styles = theme => ({
   card: {
@@ -86,21 +89,57 @@ class Home extends Component {
       <div>
         <Header screen={"Home"} searchHandler={this.onSearchEntered} />
         <ImageScrole />
-        {/* <div className={classes.grid}>
-          <GridList className={classes.gridList} cellHeight={'auto'}>
-            {this.state.filteredData.map(item => (
-              <GridListTile key={item.id}>
-                <HomeItem
-                  classes={classes}
-                  item={item}
-                  onLikedClicked={this.likeClickHandler}
-                  onAddCommentClicked={this.addCommentClickHandler}
-                  commentChangeHandler={this.commentChangeHandler}
-                  comments={this.state.comments}/>
-              </GridListTile>
-            ))}
-          </GridList>
-        </div> */}
+        <div className="container"></div>
+        <Container>
+          <Grid container spacing={3}>
+            <Grid item xs={6}>
+              <img
+                src="images/prenursery.jpg"
+                width="100%"
+                // alt={this.state.selectedPost.caption.text.split("\n")[0]}
+              />
+            </Grid>
+            <Grid item xs={6}>
+              <Grid
+                container
+                spacing={3}
+                justify="flex-start"
+                alignItems="center"
+              >
+                <Grid item>
+                  <Typography variant="subtitle2">About our school</Typography>
+                </Grid>
+              </Grid>
+              <Divider light /> <br />
+              <Grid
+                container
+                spacing={3}
+                justify="flex-start"
+                alignItems="center"
+              >
+                <Grid item>
+                  <Typography variant="caption">
+                    We need a different way of learning where we can teach my
+                    students to think out of the box and resolve problems. Our
+                    approach is unique in transforming our students to a
+                    real-time professional in any technology they want to excel.
+                  </Typography>
+                  <br />
+                  <br />
+                  <Typography variant="caption">
+                      So We look at VNT Technologies as an experience to make
+                    our students learn, Interact with our trainers more
+                    effectively. We limit students per batch to make sure our
+                    trainers pay attention to each student and understand
+                    capabilities. We connect our students to all the communities
+                    to share their knowledge and to make it a reality. We Teach
+                    the way You learn.
+                  </Typography>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Container>
       </div>
     );
   }

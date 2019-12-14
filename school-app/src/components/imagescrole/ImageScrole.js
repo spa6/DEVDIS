@@ -15,7 +15,7 @@ class ImageScrole extends Component {
           <img src="images/header2.jpeg" />
         </div>
         <div>
-          <img src="images/header1.jpeg" />
+          <img src="images/header3.jpeg" />
         </div>
       </Carousel>
     );

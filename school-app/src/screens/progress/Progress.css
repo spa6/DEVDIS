@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
 
-html, body {
-  font-family: 'Montserrat', sans-serif;
+html,
+body {
+  font-family: "Montserrat", sans-serif;
 }
 
 .progress-bar {
@@ -13,10 +14,10 @@ html, body {
 }
 
 .filler {
-  background: #1DA598;
+  background: #1da598;
   height: 100%;
   border-radius: inherit;
-  transition: width .2s ease-in;
+  transition: width 0.2s ease-in;
 }
 
 button {
@@ -25,11 +26,14 @@ button {
   font-size: 14px;
   background: #d14836;
   color: white;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   cursor: pointer;
   outline: 0;
 }
 
-.progressdiv table >tr > th {
+.progressdiv table > tr > th {
   text-align: left;
+}
+.container {
+  margin-top: 85px;
 }

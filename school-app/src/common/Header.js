@@ -9,8 +9,8 @@ import Avatar from "@material-ui/core/Avatar";
 import IconButton from "@material-ui/core/IconButton";
 import MenuItem from "@material-ui/core/MenuItem";
 import Popover from "@material-ui/core/Popover";
-import { Link } from "react-router-dom";
-import { withRouter } from "react-router-dom";
+import Link from "@material-ui/core/Link";
+// import { withRouter } from "react-router-dom";
 
 const styles = theme => ({
   grow: {
@@ -94,57 +94,57 @@ class Header extends Component {
             <div>
               {this.state.user !== "student" && (
                 <React.Fragment>
-                <Link
-                  style={{
-                    textDecoration: "none",
-                    color: "white",
-                    paddingRight: "10px",
-                    paddingLeft: "10px"
-                  }}
-                  to="/students"
-                >
-                  <span className="header-logo">Students</span>
-                </Link>
-                <Link
-                style={{
-                  textDecoration: "none",
-                  color: "white",
-                  paddingRight: "10px",
-                  paddingLeft: "10px"
-                }}
-                to="/attendence"
-              >
-                <span className="header-logo">Attendence</span>
-              </Link>
+                  <Link
+                    style={{
+                      textDecoration: "none",
+                      color: "white",
+                      paddingRight: "10px",
+                      paddingLeft: "10px"
+                    }}
+                    to="/students"
+                  >
+                    <span className="header-logo">Students</span>
+                  </Link>
+                  <Link
+                    style={{
+                      textDecoration: "none",
+                      color: "white",
+                      paddingRight: "10px",
+                      paddingLeft: "10px"
+                    }}
+                    to="/attendence"
+                  >
+                    <span className="header-logo">Attendence</span>
+                  </Link>
                 </React.Fragment>
               )}
               {this.state.user == "student" && (
                 <React.Fragment>
-                <Link
-                  style={{
-                    textDecoration: "none",
-                    color: "white",
-                    paddingRight: "10px",
-                    paddingLeft: "10px"
-                  }}
-                  to="/subjects"
-                >
-                  <span className="header-logo">Subjects</span>
-                </Link>
-                <Link
-                  style={{
-                    textDecoration: "none",
-                    color: "white",
-                    paddingRight: "10px",
-                    paddingLeft: "10px"
-                  }}
-                  to="/sattendence"
-                >
-                  <span className="header-logo">Attendence</span>
-                </Link>
+                  <Link
+                    style={{
+                      textDecoration: "none",
+                      color: "white",
+                      paddingRight: "10px",
+                      paddingLeft: "10px"
+                    }}
+                    to="/subjects"
+                  >
+                    <span className="header-logo">Subjects</span>
+                  </Link>
+                  <Link
+                    style={{
+                      textDecoration: "none",
+                      color: "white",
+                      paddingRight: "10px",
+                      paddingLeft: "10px"
+                    }}
+                    to="/sattendence"
+                  >
+                    <span className="header-logo">Attendence</span>
+                  </Link>
                 </React.Fragment>
               )}
-              
+
               <Link
                 style={{
                   textDecoration: "none",
@@ -249,4 +249,4 @@ class Header extends Component {
   };
 }
 
-export default withStyles(styles)(withRouter(Header));
+export default withStyles(styles)(Header);

@@ -34,9 +34,9 @@ import Favorite from "@material-ui/icons/Favorite";
 const messages = [
   {
     id: 1,
-    primary: "Brunch this week?",
+    primary: "Do we have any special class this weekend?  ",
     secondary:
-      "I'll be in the neighbourhood this week. Let's grab a bite to eat",
+      "Do we have any special class this weekend? based on that i will paln my weekend ",
     person: "images/avatar/5.jpg",
     comments: []
   },
@@ -65,9 +65,8 @@ const messages = [
   },
   {
     id: 5,
-    primary: "Doctor's Appointment",
-    secondary:
-      "My appointment for the doctor was rescheduled for next Saturday.",
+    primary: "Summer camp",
+    secondary: "What are activities for thia year summer camp?",
     person: "images/avatar/4.jpg",
     comments: []
   },
