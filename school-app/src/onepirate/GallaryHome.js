@@ -10,14 +10,17 @@ import ProductHowItWorks from "./modules/views/ProductHowItWorks";
 import ProductCTA from "./modules/views/ProductCTA";
 import AppAppBar from "./modules/views/AppAppBar";
 import Header from "../common/Header";
-import SchoolIntro from "./modules/views/SchoolIntro";
+import GallaryInfo from "./modules/views/GallaryInfo";
+import { useParams } from "react-router-dom";
 
 function Index() {
+  let { id } = useParams();
+  console.log(id);
   return (
     <React.Fragment>
       {/* <AppAppBar /> */}
       <Header screen={"Home"} />
-      <SchoolIntro />
+      <GallaryInfo id={id} />
       <AppFooter />
     </React.Fragment>
   );

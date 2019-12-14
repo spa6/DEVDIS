@@ -116,7 +116,7 @@ class Controller extends Component {
               }
             />
 
-            <Route path="/gallary/*" render={GallaryHome} />
+            <Route path="/gallary/:id" render={GallaryHome} />
             <Route exact path="/" render={Home} />
           </Switch>
         </div>
