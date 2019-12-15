@@ -11,6 +11,7 @@ import SAttendence from "./studentattendence/SAttendence";
 import Subjects from "./subjects/Subjects";
 import Home from "../onepirate/Home";
 import GallaryHome from "../onepirate/GallaryHome";
+import GalleryHome from "../onepirate/GalleryHome";
 
 class Controller extends Component {
   constructor(props) {
@@ -117,6 +118,8 @@ class Controller extends Component {
             />
 
             <Route path="/gallary/:id" render={GallaryHome} />
+
+            <Route path="/gallery" render={GalleryHome} />
             <Route exact path="/" render={Home} />
           </Switch>
         </div>
