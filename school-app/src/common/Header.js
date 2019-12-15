@@ -9,7 +9,8 @@ import Avatar from "@material-ui/core/Avatar";
 import IconButton from "@material-ui/core/IconButton";
 import MenuItem from "@material-ui/core/MenuItem";
 import Popover from "@material-ui/core/Popover";
-import Link from "@material-ui/core/Link";
+import { Link } from "react-router-dom";
+import Typography from "../onepirate/modules/components/Typography";
 // import { withRouter } from "react-router-dom";
 
 const styles = theme => ({
@@ -85,131 +86,13 @@ class Header extends Component {
             {/* {(screen === "Profile" || screen === "Students" || screen === "Overview") && } */}
             <Link
               style={{ textDecoration: "none", color: "white", width: "25%" }}
-              to="/home"
+              to="/"
             >
-              {/* <span className="header-logo">Image Viewer</span> */}
-              <img src="logo.png" />
+              <Typography component="h1">
+              VASISHTA SCHOOLS 
+        </Typography>
             </Link>
-            <div className={classes.grow1}></div>
-            <div>
-              {(this.state.user !== "student" && screen != "Website") && (
-                <React.Fragment>
-                  <Link
-                    style={{
-                      textDecoration: "none",
-                      color: "white",
-                      paddingRight: "10px",
-                      paddingLeft: "10px"
-                    }}
-                    to="/students"
-                  >
-                    <span className="header-logo">Students</span>
-                  </Link>
-                  <Link
-                    style={{
-                      textDecoration: "none",
-                      color: "white",
-                      paddingRight: "10px",
-                      paddingLeft: "10px"
-                    }}
-                    to="/attendence"
-                  >
-                    <span className="header-logo">Attendence</span>
-                  </Link>
-                </React.Fragment>
-              )}
-              {this.state.user == "student" && (
-                <React.Fragment>
-                  <Link
-                    style={{
-                      textDecoration: "none",
-                      color: "white",
-                      paddingRight: "10px",
-                      paddingLeft: "10px"
-                    }}
-                    to="/subjects"
-                  >
-                    <span className="header-logo">Subjects</span>
-                  </Link>
-                  <Link
-                    style={{
-                      textDecoration: "none",
-                      color: "white",
-                      paddingRight: "10px",
-                      paddingLeft: "10px"
-                    }}
-                    to="/sattendence"
-                  >
-                    <span className="header-logo">Attendence</span>
-                  </Link>
-                </React.Fragment>
-              )}
-
-{( screen != "Website") && (
-              <Link
-                style={{
-                  textDecoration: "none",
-                  color: "white",
-                  paddingRight: "10px",
-                  paddingLeft: "10px"
-                }}
-                to="/messages"
-              >
-               
-                <span className="header-logo">Messages</span>
-              </Link>
-               )}
-            </div>
             <div className={classes.grow}></div>
-            <div></div>
-            {/* {(screen === "Home") &&
-              <div className={classes.search}>
-                <div className={classes.searchIcon}>
-                  <SearchIcon /> }
-                </div>
-                <InputBase onChange={(e)=>{this.props.searchHandler(e.target.value)}} placeholder="Search…" classes={{
-                    input: classes.inputInput
-                  }}/>
-              </div> */}
-            {(screen === "Home" ||
-              screen === "Profile" ||
-              screen === "Students" ||
-              screen === "Overview" ||
-              screen === "Messages" ||
-              screen === "Attendence"||
-              screen === "Subjects") && (
-              <div>
-                <IconButton onClick={this.handleClick}>
-                  <Avatar
-                    alt="Profile Pic"
-                    src={this.state.userProfileUrl}
-                    className={classes.avatar}
-                    style={{ border: "1px solid #fff" }}
-                  />
-                </IconButton>
-                <Popover
-                  id="simple-menu"
-                  anchorEl={this.state.anchorEl}
-                  open={Boolean(this.state.anchorEl)}
-                  onClose={this.handleClose}
-                  anchorOrigin={{
-                    vertical: "bottom",
-                    horizontal: "left"
-                  }}
-                  transformOrigin={{
-                    vertical: "top",
-                    horizontal: "left"
-                  }}
-                >
-                  <div style={{ padding: "5px" }}>
-                    {screen === "Home" && <div></div>}
-                    <MenuItem onClick={this.handleAccount}>My Account</MenuItem>
-                    <div className={classes.hr} />
-                    <MenuItem onClick={this.handleLogout}>Logout</MenuItem>
-                  </div>
-                </Popover>
-              </div>
-            )}
           </Toolbar>
         </AppBar>
       </div>
