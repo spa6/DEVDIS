@@ -77,7 +77,7 @@ function ProductCTA(props) {
         <Grid item xs={12} md={6} className={classes.cardWrapper}>
           <div className={classes.card}>
             <form onSubmit={handleSubmit} className={classes.cardContent}>
-              <Typography variant="h10" component="h10" gutterBottom styles="f">
+              <Typography variant="h6" component="h6" gutterBottom styles="f">
                 Be the first to hear about upcoming classes, specific events and course registrations.
               </Typography>
               <TextField noBorder className={classes.textField} placeholder="Your email" />

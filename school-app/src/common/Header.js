@@ -101,7 +101,7 @@ class Header extends Component {
             </Link>
             <Link
               style={{ textDecoration: "none", color: "white", marginRight:"1%" }}
-              to="/"
+              to="/gallery"
             >
               GALLARY
               

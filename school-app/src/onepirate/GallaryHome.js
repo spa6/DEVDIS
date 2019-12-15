@@ -15,7 +15,6 @@ import { useParams } from "react-router-dom";
 
 function Index() {
   let { id } = useParams();
-  console.log(id);
   return (
     <React.Fragment>
       {/* <AppAppBar /> */}

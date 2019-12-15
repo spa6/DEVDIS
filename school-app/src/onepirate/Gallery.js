@@ -20,8 +20,8 @@ import "./Gallery.css";
 // ];
 function Gallery() {
   images.map(image => {
-    const url = `${window.location.origin}${image.original}`;
-    const thumbnailUrl = `${window.location.origin}${image.thumbnail}`;
+    const url = image.original.startsWith(window.location.origin) ? image.original : `${window.location.origin}${image.original}`;
+    const thumbnailUrl = image.thumbnail.startsWith(window.location.origin) ? image.thumbnail : `${window.location.origin}${image.thumbnail}`;
     image.original = url;
     image.thumbnail = thumbnailUrl;
     return image;
