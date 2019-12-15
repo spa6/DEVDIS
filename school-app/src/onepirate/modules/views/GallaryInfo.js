@@ -34,7 +34,8 @@ const styles = theme => ({
 
 function GallaryInfo(props) {
   const { classes, id } = props;
-  const imgUrl = `${window.location.origin}${images[id].url}`;
+  const imageInfo = images[id];
+  const url = `${window.location.origin}${imageInfo.url}`;
   return (
     <div>
       <div className="container"></div>
@@ -43,7 +44,7 @@ function GallaryInfo(props) {
         <Grid container spacing={3}>
           <Grid item xs={6}>
             <img
-              src={imgUrl}
+              src={url}
               width="100%"
               // alt={this.state.selectedPost.caption.text.split("\n")[0]}
             />
@@ -56,7 +57,7 @@ function GallaryInfo(props) {
               alignItems="center"
             >
               <Grid item>
-                <Typography variant="subtitle2">ABOUT US</Typography>
+                <Typography variant="subtitle2">{imageInfo.title}</Typography>
               </Grid>
             </Grid>
             <Divider light />
@@ -67,25 +68,8 @@ function GallaryInfo(props) {
               alignItems="center"
             >
               <Grid item>
-                <h4>Dedicated Educators</h4>
                 <Typography variant="caption">
-                  We know that learning is easier when you have an excellent
-                  teacher. That's why most of educators have achieved advanced
-                  degree in their field. Our facility are passinate about the
-                  subjects they teach and bring enthusiasam to their lessons.
-                </Typography>
-                <h4>First-Rate Curriculum</h4>
-                <Typography variant="caption">
-                   Are you a beginner, expert or some where in between? Not to
-                  worry! we offer a variety of high profile cources desingned to
-                  prepare you for next step.
-                </Typography>
-                <h4>Commitment to Excellence</h4>
-                <Typography variant="caption">
-                   Our mission is to embrace the persuit of excellence both
-                  inside and outside the classroom. We encourage critical
-                  thinking and emphasize the learning process over rote
-                  memorization.
+                  {imageInfo.descripion}
                 </Typography>
               </Grid>
             </Grid>
