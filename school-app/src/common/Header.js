@@ -18,7 +18,7 @@ const styles = theme => ({
     flexGrow: 1
   },
   grow1: {
-    flexGrow: 0.1
+    flexGrow: 0.6
   },
   search: {
     position: "relative",
@@ -88,11 +88,32 @@ class Header extends Component {
               style={{ textDecoration: "none", color: "white", width: "25%" }}
               to="/"
             >
-              <Typography component="h1">
-              VASISHTA SCHOOLS 
-        </Typography>
+              <h1>VASISHTA SCHOOLS</h1>
+              
             </Link>
-            <div className={classes.grow}></div>
+            <div className={classes.grow1}></div>
+            <Link
+              style={{ textDecoration: "none", color: "white" , marginRight:"1%"}}
+              to="/about"
+            >
+              ABOUT US
+              
+            </Link>
+            <Link
+              style={{ textDecoration: "none", color: "white", marginRight:"1%" }}
+              to="/"
+            >
+              GALLARY
+              
+            </Link>
+            <Link
+              style={{ textDecoration: "none", color: "white" , marginRight:"1%"}}
+              to="/contact"
+            >
+              CONTACT US
+              
+            </Link>
+            
           </Toolbar>
         </AppBar>
       </div>

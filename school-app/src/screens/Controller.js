@@ -11,6 +11,8 @@ import SAttendence from "./studentattendence/SAttendence";
 import Subjects from "./subjects/Subjects";
 import Home from "../onepirate/Home";
 import GallaryHome from "../onepirate/GallaryHome";
+import About from "../onepirate/modules/views/About";
+import Contact from "../onepirate/modules/views/Contactus";
 
 class Controller extends Component {
   constructor(props) {
@@ -113,6 +115,26 @@ class Controller extends Component {
                 ) : (
                   <Messages />
                 )
+              }
+            />
+
+            
+            <Route
+              exact
+              path="/about"
+              render={props =>
+                  <About />
+                
+              }
+            />
+
+             
+            <Route
+              exact
+              path="/contact"
+              render={props =>
+                  <Contact />
+                
               }
             />
 

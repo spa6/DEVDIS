@@ -20,10 +20,10 @@ function Index() {
       <Header screen={"Website"} />
       <ProductHero />
       <SchoolIntro />
-      <ProductValues />
       <ProductCategories />
       <ProductHowItWorks />
       <ProductCTA />
+      <ProductValues />
       <ProductSmokingHero />
       <AppFooter />
     </React.Fragment>

@@ -36,7 +36,6 @@ function SchoolIntro(props) {
 
   return (
     <div>
-      <div className="container"></div>
       <br></br>
       <Container>
         <Grid container spacing={3}>
