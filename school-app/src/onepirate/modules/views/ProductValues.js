@@ -7,13 +7,17 @@ import Typography from "../components/Typography";
 
 const styles = theme => ({
   root: {
-    display: "flex",
+    // display: "flex",
     overflow: "hidden",
     backgroundColor: theme.palette.secondary.light
   },
+  head: {
+    // display: "flex",
+    marginTop: theme.spacing(7)
+  },
   container: {
-    marginTop: theme.spacing(15),
-    marginBottom: theme.spacing(30),
+    marginTop: theme.spacing(8),
+    marginBottom: theme.spacing(5),
     display: "flex",
     position: "relative"
   },
@@ -42,6 +46,11 @@ function ProductValues(props) {
 
   return (
     <section className={classes.root}>
+      <div className={classes.head}>
+        <Typography variant="h4" marked="center" align="center" component="h2">
+          Achivements
+        </Typography>
+      </div>
       <Container className={classes.container}>
         <img
           src="/static/themes/onepirate/productCurvyLines.png"
