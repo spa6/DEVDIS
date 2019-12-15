@@ -65,16 +65,7 @@ function ProductHowItWorks(props) {
         <div>
         <ImageScrole />
         </div>
-        <Button
-          color="secondary"
-          size="large"
-          variant="contained"
-          className={classes.button}
-          component="a"
-          href="/premium-themes/onepirate/sign-up/"
-        >
-          Get started
-        </Button>
+        
       </Container>
     </section>
   );
