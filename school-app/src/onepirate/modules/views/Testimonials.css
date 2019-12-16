@@ -1,0 +1,8 @@
+.carousel.carousel-slider {
+  height: 121px;
+}
+@media only screen and (min-width: 768px) {
+  .carousel.carousel-slider {
+    height: 300px;
+  }
+}

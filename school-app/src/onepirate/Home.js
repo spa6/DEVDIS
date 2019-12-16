@@ -6,8 +6,8 @@ import ProductSmokingHero from "./modules/views/ProductSmokingHero";
 import AppFooter from "./modules/views/AppFooter";
 import ProductHero from "./modules/views/ProductHero";
 import ProductValues from "./modules/views/ProductValues";
-import ProductHowItWorks from "./modules/views/ProductHowItWorks";
-import ProductCTA from "./modules/views/ProductCTA";
+import Testimonials from "./modules/views/Testimonials";
+import SubscriptionList from "./modules/views/SubscriptionList";
 import AppAppBar from "./modules/views/AppAppBar";
 import Header from "../common/Header";
 import SchoolIntro from "./modules/views/SchoolIntro";
@@ -22,8 +22,8 @@ function Index() {
       <ProductHero />
       <SchoolIntro />
       <ProductCategories />
-      <ProductHowItWorks />
-      <ProductCTA />
+      <Testimonials />
+      <SubscriptionList />
       <ProductValues />
       <ProductSmokingHero />
       <AppFooter />
