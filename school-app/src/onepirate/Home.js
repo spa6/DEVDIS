@@ -8,10 +8,9 @@ import ProductHero from "./modules/views/ProductHero";
 import ProductValues from "./modules/views/ProductValues";
 import Testimonials from "./modules/views/Testimonials";
 import SubscriptionList from "./modules/views/SubscriptionList";
-import AppAppBar from "./modules/views/AppAppBar";
 import Header from "../common/Header";
 import SchoolIntro from "./modules/views/SchoolIntro";
-import Login from "../screens/login/Login";
+// import Login from "../screens/login/Login";
 
 function Index() {
   return (

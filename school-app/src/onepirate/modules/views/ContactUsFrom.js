@@ -16,11 +16,11 @@ import Typography from "../components/Typography";
 import HomeIcon from "@material-ui/icons/Home";
 import MailIcon from "@material-ui/icons/Mail";
 import PhoneIcon from "@material-ui/icons/Phone";
-import FormControl from "@material-ui/core/FormControl";
-import InputLabel from "@material-ui/core/InputLabel";
-import FormHelperText from "@material-ui/core/FormHelperText";
-import Button from "@material-ui/core/Button";
-import Input from "@material-ui/core/Input";
+// import FormControl from "@material-ui/core/FormControl";
+// import InputLabel from "@material-ui/core/InputLabel";
+// import FormHelperText from "@material-ui/core/FormHelperText";
+// import Button from "@material-ui/core/Button";
+// import Input from "@material-ui/core/Input";
 
 const styles = theme => ({
   col: {

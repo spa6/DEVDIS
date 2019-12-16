@@ -91,7 +91,7 @@ export default function AppFooter() {
               spacing={2}
             >
               <Grid item className={classes.icons}>
-                <a href="https://material-ui.com/" className={classes.icon}>
+                <a href="https://www.facebook.com/" className={classes.icon}>
                   <img
                     src={
                       window.location.origin +
@@ -100,10 +100,7 @@ export default function AppFooter() {
                     alt="Facebook"
                   />
                 </a>
-                <a
-                  href="https://twitter.com/MaterialUI"
-                  className={classes.icon}
-                >
+                <a href="https://twitter.com/" className={classes.icon}>
                   <img
                     src={
                       window.location.origin +
@@ -124,10 +121,10 @@ export default function AppFooter() {
             </Typography>
             <ul className={classes.list}>
               <li className={classes.listItem}>
-                <Link href="/premium-themes/onepirate/terms/">Terms</Link>
+                <Link href="/">Terms</Link>
               </li>
               <li className={classes.listItem}>
-                <Link href="/premium-themes/onepirate/privacy/">Privacy</Link>
+                <Link href="/">Privacy</Link>
               </li>
             </ul>
           </Grid>

@@ -29,7 +29,7 @@ class Controller extends Component {
       <Router>
         <div className="main-container">
           <Switch>
-            <Route
+            {/* <Route
               exact
               path="/home"
               render={props =>
@@ -39,8 +39,8 @@ class Controller extends Component {
                   <Home />
                 )
               }
-            />
-            <Route
+            /> */}
+            {/* <Route
               exact
               path="/profile"
               render={props =>
@@ -50,8 +50,8 @@ class Controller extends Component {
                   <Profile />
                 )
               }
-            />
-            <Route
+            /> */}
+            {/* <Route
               exact
               path="/students"
               render={props =>
@@ -61,9 +61,9 @@ class Controller extends Component {
                   <Students />
                 )
               }
-            />
+            /> */}
 
-            <Route
+            {/* <Route
               exact
               path="/overview"
               render={props =>
@@ -73,8 +73,8 @@ class Controller extends Component {
                   <Overview />
                 )
               }
-            />
-            <Route
+            /> */}
+            {/* <Route
               exact
               path="/attendence"
               render={props =>
@@ -84,8 +84,8 @@ class Controller extends Component {
                   <Attendence />
                 )
               }
-            />
-            <Route
+            /> */}
+            {/* <Route
               exact
               path="/sattendence"
               render={props =>
@@ -95,8 +95,8 @@ class Controller extends Component {
                   <SAttendence />
                 )
               }
-            />
-            <Route
+            /> */}
+            {/* <Route
               exact
               path="/subjects"
               render={props =>
@@ -106,8 +106,8 @@ class Controller extends Component {
                   <Subjects />
                 )
               }
-            />
-            <Route
+            /> */}
+            {/* <Route
               exact
               path="/messages"
               render={props =>
@@ -117,27 +117,11 @@ class Controller extends Component {
                   <Messages />
                 )
               }
-            />
+            /> */}
 
-            
-            <Route
-              exact
-              path="/about"
-              render={props =>
-                  <About />
-                
-              }
-            />
+            <Route exact path="/about" render={props => <About />} />
 
-             
-            <Route
-              exact
-              path="/contact"
-              render={props =>
-                  <Contact />
-                
-              }
-            />
+            <Route exact path="/contact" render={props => <Contact />} />
 
             <Route path="/gallary/:id" render={GallaryHome} />
 
