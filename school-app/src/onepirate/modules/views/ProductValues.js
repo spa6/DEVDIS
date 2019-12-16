@@ -53,7 +53,10 @@ function ProductValues(props) {
       </div>
       <Container className={classes.container}>
         <img
-          src="/static/themes/onepirate/productCurvyLines.png"
+          src={
+            window.location.origin +
+            "/static/themes/onepirate/productCurvyLines.png"
+          }
           className={classes.curvyLines}
           alt="curvy lines"
         />

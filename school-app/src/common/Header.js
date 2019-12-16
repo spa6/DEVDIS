@@ -11,6 +11,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Popover from "@material-ui/core/Popover";
 import { Link } from "react-router-dom";
 import Typography from "../onepirate/modules/components/Typography";
+import Button from "@material-ui/core/Button";
 // import { withRouter } from "react-router-dom";
 
 const styles = theme => ({
@@ -89,31 +90,40 @@ class Header extends Component {
               to="/"
             >
               <h1>VASISHTA SCHOOLS</h1>
-              
             </Link>
             <div className={classes.grow1}></div>
             <Link
-              style={{ textDecoration: "none", color: "white" , marginRight:"1%"}}
+              style={{
+                textDecoration: "none",
+                color: "white",
+                marginRight: "1%"
+              }}
               to="/about"
             >
               ABOUT US
-              
+              <span class="Typography-markedH4Center-51"></span>
             </Link>
             <Link
-              style={{ textDecoration: "none", color: "white", marginRight:"1%" }}
+              style={{
+                textDecoration: "none",
+                color: "white",
+                marginRight: "1%"
+              }}
               to="/gallery"
             >
               GALLARY
-              
             </Link>
+            {/* <Button href="/gallery">GALLARY</Button> */}
             <Link
-              style={{ textDecoration: "none", color: "white" , marginRight:"1%"}}
+              style={{
+                textDecoration: "none",
+                color: "white",
+                marginRight: "1%"
+              }}
               to="/contact"
             >
               CONTACT US
-              
             </Link>
-            
           </Toolbar>
         </AppBar>
       </div>

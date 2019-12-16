@@ -29,6 +29,7 @@ function FormPage(props) {
         <Grid item xs={6}>
           <MDBContainer>
             <MDBRow>
+              <MDBCol />
               <MDBCol>
                 <form>
                   <p className="h5 text-center mb-4">Get In Touch!</p>

@@ -13,7 +13,7 @@ function Copyright() {
     <React.Fragment>
       {"© "}
       <Link color="inherit" href="https://material-ui.com/">
-        Your Website
+        Vasista schools
       </Link>{" "}
       {new Date().getFullYear()}
     </React.Fragment>
@@ -92,7 +92,10 @@ export default function AppFooter() {
               <Grid item className={classes.icons}>
                 <a href="https://material-ui.com/" className={classes.icon}>
                   <img
-                    src="/static/themes/onepirate/appFooterFacebook.png"
+                    src={
+                      window.location.origin +
+                      "/static/themes/onepirate/appFooterFacebook.png"
+                    }
                     alt="Facebook"
                   />
                 </a>
@@ -101,7 +104,10 @@ export default function AppFooter() {
                   className={classes.icon}
                 >
                   <img
-                    src="/static/themes/onepirate/appFooterTwitter.png"
+                    src={
+                      window.location.origin +
+                      "/static/themes/onepirate/appFooterTwitter.png"
+                    }
                     alt="Twitter"
                   />
                 </a>

@@ -94,7 +94,7 @@ function ProductCategories(props) {
       </Typography>
       <div className={classes.images}>
         {images.map((image, index) => {
-          const link = `/gallary/${index}`;
+          const link = `${window.location.origin}/gallary/${index}`;
           return (
             <ButtonBase
               key={image.title}

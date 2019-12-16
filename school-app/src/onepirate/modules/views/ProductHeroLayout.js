@@ -1,52 +1,52 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import clsx from 'clsx';
-import { withStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
+import React from "react";
+import PropTypes from "prop-types";
+import clsx from "clsx";
+import { withStyles } from "@material-ui/core/styles";
+import Container from "@material-ui/core/Container";
 
 const styles = theme => ({
   root: {
     color: theme.palette.common.white,
-    position: 'relative',
-    display: 'flex',
-    alignItems: 'center',
-    [theme.breakpoints.up('sm')]: {
-      height: '80vh',
+    position: "relative",
+    display: "flex",
+    alignItems: "center",
+    [theme.breakpoints.up("sm")]: {
+      height: "80vh",
       minHeight: 500,
-      maxHeight: 1300,
-    },
+      maxHeight: 1300
+    }
   },
   container: {
     marginTop: theme.spacing(3),
     marginBottom: theme.spacing(14),
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center"
   },
   backdrop: {
-    position: 'absolute',
+    position: "absolute",
     left: 0,
     right: 0,
     top: 0,
     bottom: 0,
     backgroundColor: theme.palette.common.black,
     opacity: 0.5,
-    zIndex: -1,
+    zIndex: -1
   },
   background: {
-    position: 'absolute',
+    position: "absolute",
     left: 0,
     right: 0,
     top: 0,
     bottom: 0,
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    zIndex: -2,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    zIndex: -2
   },
   arrowDown: {
-    position: 'absolute',
-    bottom: theme.spacing(4),
-  },
+    position: "absolute",
+    bottom: theme.spacing(4)
+  }
 });
 
 function ProductHeroLayout(props) {
@@ -56,7 +56,10 @@ function ProductHeroLayout(props) {
     <section className={classes.root}>
       <Container className={classes.container}>
         <img
-          src="/static/themes/onepirate/productHeroWonder.png"
+          src={
+            window.location.origin +
+            "/static/themes/onepirate/productHeroWonder.png"
+          }
           alt="wonder"
           width="147"
           height="80"
@@ -66,7 +69,10 @@ function ProductHeroLayout(props) {
         <div className={clsx(classes.background, backgroundClassName)} />
         <img
           className={classes.arrowDown}
-          src="/static/themes/onepirate/productHeroArrowDown.png"
+          src={
+            window.location.origin +
+            "/static/themes/onepirate/productHeroArrowDown.png"
+          }
           height="16"
           width="12"
           alt="arrow down"
@@ -79,7 +85,7 @@ function ProductHeroLayout(props) {
 ProductHeroLayout.propTypes = {
   backgroundClassName: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(ProductHeroLayout);
