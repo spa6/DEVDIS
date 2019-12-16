@@ -14,7 +14,6 @@ function Index() {
       <br></br>
       <br></br>
       <br></br>
-      <br></br>
       <SchoolIntro />
       <AppFooter />
     </React.Fragment>

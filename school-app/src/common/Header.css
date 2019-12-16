@@ -1,17 +1,31 @@
 .app-header {
-    background-color: #263238;
-    height: 50px;
-    line-height: 50px;
-    color: #fff;
-    font-size: 18px;
-    text-align: left;
+  background-color: #263238;
+  height: 50px;
+  line-height: 50px;
+  color: #fff;
+  font-size: 18px;
+  text-align: left;
 }
 
-.header-logo{
-    color: #ffffff;
-    font-size: 18px
+.header-logo {
+  color: #ffffff;
+  font-size: 18px;
 }
 
 .login-signup-tabs {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
+}
+.menubar {
+  display: none;
+}
+.mobileView {
+  display: inline;
+}
+@media only screen and (min-width: 768px) {
+  .menubar {
+    display: inline;
+  }
+  .mobileView {
+    display: none;
+  }
 }

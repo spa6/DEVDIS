@@ -12,6 +12,7 @@ import Popover from "@material-ui/core/Popover";
 import { Link } from "react-router-dom";
 import Typography from "../onepirate/modules/components/Typography";
 import Button from "@material-ui/core/Button";
+import MenuIcon from "@material-ui/icons/Menu";
 // import { withRouter } from "react-router-dom";
 
 const styles = theme => ({
@@ -21,12 +22,21 @@ const styles = theme => ({
   grow1: {
     flexGrow: 0.6
   },
-  search: {
-    position: "relative",
-    borderRadius: "4px",
-    backgroundColor: "#c0c0c0",
-    marginLeft: 0,
-    width: "300px"
+  menuLink: {
+    textDecoration: "none",
+    color: "white",
+    marginRight: "1%",
+    "&:hover": {
+      color: "#007bff"
+    }
+  },
+  menuMobileLink: {
+    textDecoration: "none",
+    color: "black",
+    // marginRight: "1%",
+    "&:hover": {
+      color: "#007bff"
+    }
   },
   searchIcon: {
     width: theme.spacing(4),
@@ -79,51 +89,73 @@ class Header extends Component {
 
   render() {
     const { classes, screen } = this.props;
+    const menuClasses = `${classes.grow1} menubar`;
     return (
       <div>
         <AppBar className={classes.appHeader}>
           <Toolbar>
             {/* {(screen === "Login" || screen === "Home") && <span className="header-logo">Image Viewer</span>} */}
             {/* {(screen === "Profile" || screen === "Students" || screen === "Overview") && } */}
-            <Link
+            {/* <Link
               style={{ textDecoration: "none", color: "white", width: "25%" }}
               to="/"
             >
               <h1>VASISHTA SCHOOLS</h1>
+            </Link> */}
+            <Link style={{ textDecoration: "none", color: "white" }} to="/">
+              <span className="header-logo">VASISHTA SCHOOLS</span>
             </Link>
             <div className={classes.grow1}></div>
-            <Link
-              style={{
-                textDecoration: "none",
-                color: "white",
-                marginRight: "1%"
-              }}
-              to="/about"
-            >
-              ABOUT US
-              <span class="Typography-markedH4Center-51"></span>
-            </Link>
-            <Link
-              style={{
-                textDecoration: "none",
-                color: "white",
-                marginRight: "1%"
-              }}
-              to="/gallery"
-            >
-              GALLARY
-            </Link>
-            {/* <Button href="/gallery">GALLARY</Button> */}
-            <Link
-              style={{
-                textDecoration: "none",
-                color: "white",
-                marginRight: "1%"
-              }}
-              to="/contact"
-            >
-              CONTACT US
-            </Link>
+            <div className={menuClasses}>
+              <Link className={classes.menuLink} to="/about">
+                ABOUT US
+              </Link>
+              <Link className={classes.menuLink} to="/gallery">
+                GALLARY
+              </Link>
+              <Link className={classes.menuLink} to="/contact">
+                CONTACT US
+              </Link>
+            </div>
+            <div className="mobileView">
+              <IconButton onClick={this.handleClick}>
+                <MenuIcon color="secondary" />
+              </IconButton>
+              <Popover
+                id="simple-menu"
+                anchorEl={this.state.anchorEl}
+                open={Boolean(this.state.anchorEl)}
+                onClose={this.handleClose}
+                anchorOrigin={{
+                  vertical: "bottom",
+                  horizontal: "left"
+                }}
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "left"
+                }}
+              >
+                <div style={{ padding: "5px" }}>
+                  <MenuItem>
+                    <Link className={classes.menuMobileLink} to="/about">
+                      ABOUT US
+                    </Link>
+                  </MenuItem>
+                  <div className={classes.hr} />
+                  <MenuItem>
+                    <Link className={classes.menuMobileLink} to="/gallery">
+                      GALLARY
+                    </Link>
+                  </MenuItem>
+                  <div className={classes.hr} />
+                  <MenuItem>
+                    <Link className={classes.menuMobileLink} to="/contact">
+                      CONTACT US
+                    </Link>
+                  </MenuItem>
+                </div>
+              </Popover>
+            </div>
           </Toolbar>
         </AppBar>
       </div>

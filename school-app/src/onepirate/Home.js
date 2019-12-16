@@ -18,6 +18,7 @@ function Index() {
     <React.Fragment>
       {/* <AppAppBar /> */}
       <Header screen={"Website"} />
+      <div className="container"></div>
       <ProductHero />
       <SchoolIntro />
       <ProductCategories />

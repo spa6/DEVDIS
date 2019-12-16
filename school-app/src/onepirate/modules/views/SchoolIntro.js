@@ -39,14 +39,14 @@ function SchoolIntro(props) {
       <br></br>
       <Container>
         <Grid container spacing={3}>
-          <Grid item xs={6}>
+          <Grid item xs={12} sm={6}>
             <img
               src={window.location.origin + "/images/campus/campus.jpg"}
               width="100%"
               // alt={this.state.selectedPost.caption.text.split("\n")[0]}
             />
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12} sm={6}>
             <Grid
               container
               spacing={3}
