@@ -7,6 +7,7 @@ import Typography from "../components/Typography";
 import TextField from "../components/TextField";
 import HomeIcon from "@material-ui/icons/Home";
 import MailIcon from "@material-ui/icons/Mail";
+import PhoneIcon from "@material-ui/icons/Phone";
 
 function Copyright() {
   return (
@@ -81,11 +82,11 @@ export default function AppFooter() {
     <Typography component="footer" className={classes.root}>
       <Container className={classes.container}>
         <Grid container spacing={5}>
-          <Grid item xs={6} sm={4} md={3}>
+          <Grid item xs={6} sm={4}>
             <Grid
               container
-              direction="column"
-              justify="flex-end"
+              direction="row"
+              // justify="flex-end"
               className={classes.iconsWrapper}
               spacing={2}
             >
@@ -117,7 +118,7 @@ export default function AppFooter() {
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={6} sm={4} md={2}>
+          <Grid item xs={6} sm={4}>
             <Typography variant="h6" marked="left" gutterBottom>
               Legal
             </Typography>
@@ -130,8 +131,8 @@ export default function AppFooter() {
               </li>
             </ul>
           </Grid>
-          <Grid item xs={4} sm={6} md={2}></Grid>
-          <Grid>
+          {/* <Grid item xs={4} sm={6} md={2}></Grid> */}
+          <Grid item xs={12} sm={4}>
             <Typography variant="h6" marked="left" gutterBottom>
               Contact Us
             </Typography>
@@ -141,10 +142,10 @@ export default function AppFooter() {
               justify="flex-start"
               alignItems="center"
             >
-              <Grid xs={1} item>
+              <Grid xs={2} sm={1} item>
                 <HomeIcon />
               </Grid>
-              <Grid xs={5} item>
+              <Grid xs={10} item>
                 <Typography variant="caption">
                   Vasista schools, xz road, abc nagar, Ballary , Karnataka.
                 </Typography>
@@ -156,10 +157,10 @@ export default function AppFooter() {
               justify="flex-start"
               alignItems="center"
             >
-              <Grid xs={1} item>
+              <Grid xs={2} sm={1} item>
                 <MailIcon />
               </Grid>
-              <Grid xs={5} item>
+              <Grid xs={10} item>
                 <Typography variant="caption">info@vasista.com</Typography>
               </Grid>
             </Grid>
@@ -169,10 +170,10 @@ export default function AppFooter() {
               justify="flex-start"
               alignItems="center"
             >
-              <Grid xs={1} item>
+              <Grid xs={2} sm={1} item>
                 <MailIcon />
               </Grid>
-              <Grid xs={5} item>
+              <Grid xs={10} item>
                 <Typography variant="caption">contact@vasista.com</Typography>
               </Grid>
             </Grid>
@@ -182,6 +183,9 @@ export default function AppFooter() {
               justify="flex-start"
               alignItems="center"
             >
+              <Grid sm={1} xs={2} item>
+                <PhoneIcon />
+              </Grid>
               <Grid item>
                 <Typography variant="body1">Admission Desk</Typography>
                 <Typography variant="caption">080 - 1234567896</Typography>
