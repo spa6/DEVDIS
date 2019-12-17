@@ -3,6 +3,7 @@ import withRoot from "./modules/withRoot";
 import React from "react";
 import ProductCategories from "./modules/views/ProductCategories";
 import ProductSmokingHero from "./modules/views/ProductSmokingHero";
+import MailSubscriptions from "./modules/views/MailSubscriptions";
 import AppFooter from "./modules/views/AppFooter";
 import ProductHero from "./modules/views/ProductHero";
 import ProductValues from "./modules/views/ProductValues";
@@ -22,7 +23,7 @@ function Index() {
       <SchoolIntro />
       <ProductCategories />
       <Testimonials />
-      <SubscriptionList />
+      <MailSubscriptions />
       <ProductValues />
       <ProductSmokingHero />
       <AppFooter />

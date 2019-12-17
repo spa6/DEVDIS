@@ -25,6 +25,7 @@ const styles = theme => ({
   menuLink: {
     textDecoration: "none",
     color: "white",
+    paddingLeft: 10,
     marginRight: "1%",
     "&:hover": {
       color: "#007bff"
@@ -102,16 +103,26 @@ class Header extends Component {
             >
               <h1>VASISHTA SCHOOLS</h1>
             </Link> */}
+
             <Link style={{ textDecoration: "none", color: "white" }} to="/">
               <span className="header-logo">VASISHTA SCHOOLS</span>
             </Link>
             <div className={classes.grow1}></div>
             <div className={menuClasses}>
+              <Link className={classes.menuLink} to="/">
+                HOME
+              </Link>
               <Link className={classes.menuLink} to="/about">
                 ABOUT US
               </Link>
               <Link className={classes.menuLink} to="/gallery">
                 GALLARY
+              </Link>
+              <Link className={classes.menuLink} to="/contact">
+                BLOG
+              </Link>
+              <Link className={classes.menuLink} to="/contact">
+                CAREERS
               </Link>
               <Link className={classes.menuLink} to="/contact">
                 CONTACT US
@@ -137,6 +148,12 @@ class Header extends Component {
               >
                 <div style={{ padding: "5px" }}>
                   <MenuItem>
+                    <Link className={classes.menuMobileLink} to="/home">
+                      HOME
+                    </Link>
+                  </MenuItem>
+                  <div className={classes.hr} />
+                  <MenuItem>
                     <Link className={classes.menuMobileLink} to="/about">
                       ABOUT US
                     </Link>
@@ -145,6 +162,18 @@ class Header extends Component {
                   <MenuItem>
                     <Link className={classes.menuMobileLink} to="/gallery">
                       GALLARY
+                    </Link>
+                  </MenuItem>
+                  <div className={classes.hr} />
+                  <MenuItem>
+                    <Link className={classes.menuMobileLink} to="/blog">
+                      BLOG
+                    </Link>
+                  </MenuItem>
+                  <div className={classes.hr} />
+                  <MenuItem>
+                    <Link className={classes.menuMobileLink} to="/contact">
+                      CAREERS
                     </Link>
                   </MenuItem>
                   <div className={classes.hr} />
