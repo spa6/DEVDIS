@@ -1,3 +1,12 @@
-.MuiInputBase-root .MuiOutlinedInput-root .MuiInputBase-formControl {
+.MuiInputBase-root {
+  color: white;
+}
+.MuiOutlinedInput-root {
+  color: white;
+}
+.MuiInputBase-formControl {
+  color: white;
+}
+input {
   color: white;
 }
