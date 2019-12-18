@@ -7,7 +7,7 @@ import ProductHeroLayout from "./ProductHeroLayout";
 import Grid from "@material-ui/core/Grid";
 import Divider from "@material-ui/core/Divider";
 import Container from "@material-ui/core/Container";
-import images from "../../../__mocks__/images";
+import images from "../../../__mocks__/FacultyImages";
 
 const backgroundImage = "school.PNG";
 
@@ -33,20 +33,26 @@ const styles = theme => ({
 });
 
 function GallaryInfo(props) {
+
   const { classes, id } = props;
-  const imageInfo = images[id];
-  const url = `${window.location.origin}${imageInfo.url}`;
+  
   return (
     <div>
       <div className="container"></div>
       <br></br>
+      
       <Container>
-        <Grid container spacing={3}>
+        <div className={classes.images}>
+        {images.map((imageInfo, index) => {
+        // const imageInfo = images[id];
+        const url = `${window.location.origin}${imageInfo.url}`;
+        return (
+          <Grid container spacing={3}>
           <Grid item xs={12} sm={6}>
             <img
               src={url}
               width="100%"
-              
+              style={{ width: 200, height: 200, borderRadius: 200 / 2 }}
               // alt={this.state.selectedPost.caption.text.split("\n")[0]}
             />
           </Grid>
@@ -76,7 +82,12 @@ function GallaryInfo(props) {
             </Grid>
           </Grid>
         </Grid>
+        );
+        })}
+        </div>
+        
       </Container>
+     
     </div>
   );
 }

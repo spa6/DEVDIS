@@ -118,6 +118,9 @@ class Header extends Component {
               <Link className={classes.menuLink} to="/gallery">
                 GALLARY
               </Link>
+              <Link className={classes.menuLink} to="/faculty">
+                FACULTY
+              </Link>
               <Link className={classes.menuLink} to="/contact">
                 BLOG
               </Link>
