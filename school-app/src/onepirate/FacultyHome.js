@@ -20,8 +20,7 @@ function Index() {
     <React.Fragment>
       {/* <AppAppBar /> */}
       <Header screen={"Home"} />
-      {(id === "2")&& <Faculty id={id} />}
-      {(id != "2")&& <GallaryInfo id={id} />}
+      <Faculty/>
       <AppFooter />
     </React.Fragment>
   );
