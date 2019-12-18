@@ -72,6 +72,12 @@ function GallaryInfo(props) {
                 <Typography variant="caption">
                   {imageInfo.descripion}
                 </Typography>
+                <Typography variant="caption">
+                  {imageInfo.descripion}
+                </Typography>
+                <Typography variant="caption">
+                  {imageInfo.descripion}
+                </Typography>
               </Grid>
             </Grid>
           </Grid>
