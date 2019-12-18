@@ -13,6 +13,7 @@ import Home from "../onepirate/Home";
 import GallaryHome from "../onepirate/GallaryHome";
 import About from "../onepirate/modules/views/About";
 import Contact from "../onepirate/modules/views/Contactus";
+import ClassRooms from "../onepirate/modules/views/ClassRooms";
 import GalleryHome from "../onepirate/GalleryHome";
 import FacultyHome from "../onepirate/FacultyHome";
 
@@ -29,8 +30,8 @@ class Controller extends Component {
     return (
       <Router>
         <div className="main-container">
-          <Switch>
-            {/* <Route
+          {/* <Switch> */}
+          {/* <Route
               exact
               path="/home"
               render={props =>
@@ -41,7 +42,7 @@ class Controller extends Component {
                 )
               }
             /> */}
-            {/* <Route
+          {/* <Route
               exact
               path="/profile"
               render={props =>
@@ -52,7 +53,7 @@ class Controller extends Component {
                 )
               }
             /> */}
-            {/* <Route
+          {/* <Route
               exact
               path="/students"
               render={props =>
@@ -64,7 +65,7 @@ class Controller extends Component {
               }
             /> */}
 
-            {/* <Route
+          {/* <Route
               exact
               path="/overview"
               render={props =>
@@ -75,7 +76,7 @@ class Controller extends Component {
                 )
               }
             /> */}
-            {/* <Route
+          {/* <Route
               exact
               path="/attendence"
               render={props =>
@@ -86,7 +87,7 @@ class Controller extends Component {
                 )
               }
             /> */}
-            {/* <Route
+          {/* <Route
               exact
               path="/sattendence"
               render={props =>
@@ -97,7 +98,7 @@ class Controller extends Component {
                 )
               }
             /> */}
-            {/* <Route
+          {/* <Route
               exact
               path="/subjects"
               render={props =>
@@ -108,7 +109,7 @@ class Controller extends Component {
                 )
               }
             /> */}
-            {/* <Route
+          {/* <Route
               exact
               path="/messages"
               render={props =>
@@ -120,16 +121,17 @@ class Controller extends Component {
               }
             /> */}
 
-            <Route exact path="/about" render={props => <About />} />
+          <Route exact path="/about" render={props => <About />} />
 
-            <Route exact path="/contact" render={props => <Contact />} />
+          <Route exact path="/contact" render={props => <Contact />} />
 
-            <Route path="/gallary/:id" render={GallaryHome} />
+          <Route path="/gallary/:id" render={GallaryHome} />
 
-            <Route path="/gallery" render={GalleryHome} />
-            <Route path="/faculty" render={FacultyHome} />
-            <Route exact path="/" render={Home} />
-          </Switch>
+          <Route path="/gallery" render={GalleryHome} />
+          <Route path="/classRooms" render={ClassRooms} />
+          <Route path="/faculty" render={FacultyHome} />
+          <Route exact path="/" render={Home} />
+          {/* </Switch> */}
         </div>
       </Router>
     );
