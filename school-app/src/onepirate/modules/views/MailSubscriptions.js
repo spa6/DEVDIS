@@ -3,8 +3,7 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Button from "../components/Button";
 import Typography from "../components/Typography";
-import Admission from "../components/Admission";
-import ProductHeroLayout from "./ProductHeroLayout";
+import MailSubscriptionLayout from "./MailSubscriptionLayout";
 
 import TextField from "@material-ui/core/TextField";
 import "./Common.css";
@@ -17,10 +16,26 @@ const styles = theme => ({
     backgroundColor: "#7fc7d9", // Average color of the background image.
     backgroundPosition: "center"
   },
+  formdiv: {
+    display: "grid",
+    [theme.breakpoints.up("sm")]: {
+      display: "block"
+    }
+  },
   button: {
     minWidth: 200,
     borderRadius: 30,
-    marginLeft: 28
+    marginTop: 10,
+    [theme.breakpoints.up("sm")]: {
+      marginLeft: 28,
+      marginTop: 0
+    }
+  },
+  textField: {
+    width: 298,
+    [theme.breakpoints.up("sm")]: {
+      width: 400
+    }
   },
   h5: {
     marginBottom: theme.spacing(4),
@@ -33,6 +48,28 @@ const styles = theme => ({
     marginTop: theme.spacing(2)
   }
 });
+const CssTextField = withStyles({
+  root: {
+    "& .MuiInput-underline:after": {
+      borderBottomColor: "red",
+      color: "white"
+    },
+    "& .MuiOutlinedInput-root": {
+      "& input": {
+        color: "white"
+      },
+      "& fieldset": {
+        borderColor: "red"
+      },
+      "&:hover fieldset": {
+        borderColor: "red"
+      },
+      "&.Mui-focused fieldset": {
+        borderColor: "red"
+      }
+    }
+  }
+})(TextField);
 
 class MailSubscriptions extends Component {
   constructor() {
@@ -55,7 +92,7 @@ class MailSubscriptions extends Component {
     const { modalIsOpen } = this.state;
 
     return (
-      <ProductHeroLayout backgroundClassName={classes.background}>
+      <MailSubscriptionLayout backgroundClassName={classes.background}>
         {/* Increase the network loading priority of the background image. */}
         <img
           style={{ display: "none" }}
@@ -74,9 +111,9 @@ class MailSubscriptions extends Component {
           BE THE FIRST TO HEAR ABOUT UPCOMING CLASSES, SPECIFIC EVENTS AND
           COURSE REGISTRATIONS.
         </Typography>
-        <div>
-          <TextField
-            style={{ width: 400, color: "white" }}
+        <div className={classes.formdiv}>
+          <CssTextField
+            className={classes.textField}
             variant="outlined"
             align="right"
             autoComplete="false"
@@ -94,7 +131,7 @@ class MailSubscriptions extends Component {
             SUBSCIBE
           </Button>
         </div>
-      </ProductHeroLayout>
+      </MailSubscriptionLayout>
     );
   }
 }

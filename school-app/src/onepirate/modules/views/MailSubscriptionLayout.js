@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import ImageScrole from "../../../components/imagescrole/ImageScrole";
 
 const styles = theme => ({
   root: {
@@ -50,7 +49,7 @@ const styles = theme => ({
   }
 });
 
-function ProductHeroLayout(props) {
+function MailSubscriptionLayout(props) {
   const { backgroundClassName, children, classes } = props;
 
   return (
@@ -68,7 +67,6 @@ function ProductHeroLayout(props) {
         {children}
         <div className={classes.backdrop} />
         <div className={clsx(classes.background, backgroundClassName)} />
-        <ImageScrole />
         {/* <img
           className={classes.arrowDown}
           src={
@@ -84,10 +82,10 @@ function ProductHeroLayout(props) {
   );
 }
 
-ProductHeroLayout.propTypes = {
+MailSubscriptionLayout.propTypes = {
   backgroundClassName: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(ProductHeroLayout);
+export default withStyles(styles)(MailSubscriptionLayout);

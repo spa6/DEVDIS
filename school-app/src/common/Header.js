@@ -151,7 +151,7 @@ class Header extends Component {
               >
                 <div style={{ padding: "5px" }}>
                   <MenuItem>
-                    <Link className={classes.menuMobileLink} to="/home">
+                    <Link className={classes.menuMobileLink} to="/">
                       HOME
                     </Link>
                   </MenuItem>

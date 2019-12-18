@@ -7,17 +7,28 @@ import "./Imagescrole.css";
 class ImageScrole extends Component {
   render() {
     return (
-      <Carousel showThumbs={false} dynamicHeight={true} autoPlay={true}>
-        <div>
-          <img src="images/header1.jpeg" />
-        </div>
-        <div>
-          <img src="images/header2.jpeg" />
-        </div>
-        <div>
-          <img src="images/header3.jpeg" />
-        </div>
-      </Carousel>
+      <div className="scroleMobile">
+        <Carousel
+          className="background"
+          showThumbs={false}
+          autoPlay={true}
+          showArrows={false}
+          infiniteLoop={true}
+        >
+          <div>
+            <img src="images/banner1.png" />
+          </div>
+          <div>
+            <img src="images/banner2.png" />
+          </div>
+          <div>
+            <img src="images/banner3.png" />
+          </div>
+          <div>
+            <img src="images/banner4.png" />
+          </div>
+        </Carousel>
+      </div>
     );
   }
 }
