@@ -13,6 +13,7 @@ import Header from "../common/Header";
 import GallaryInfo from "./modules/views/GallaryInfo";
 import { useParams } from "react-router-dom";
 import Faculty from "./modules/views/Faculty";
+import Facility from "./modules/views/Facilities";
 
 function Index() {
   let { id } = useParams();
@@ -21,7 +22,8 @@ function Index() {
       {/* <AppAppBar /> */}
       <Header screen={"Home"} />
       {(id === "2")&& <Faculty id={id} />}
-      {(id != "2")&& <GallaryInfo id={id} />}
+      {(id === "6")&& <Facility id={id} />}
+      {(id != "2" && id != "6")&& <GallaryInfo id={id} />}
       <AppFooter />
     </React.Fragment>
   );

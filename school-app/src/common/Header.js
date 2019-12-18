@@ -169,6 +169,12 @@ class Header extends Component {
                   </MenuItem>
                   <div className={classes.hr} />
                   <MenuItem>
+                    <Link className={classes.menuMobileLink} to="/faculty">
+                      FACULTY
+                    </Link>
+                  </MenuItem>
+                  <div className={classes.hr} />
+                  <MenuItem>
                     <Link className={classes.menuMobileLink} to="/blog">
                       BLOG
                     </Link>
