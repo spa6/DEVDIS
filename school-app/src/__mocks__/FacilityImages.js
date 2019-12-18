@@ -4,35 +4,35 @@ const images = [
     title: "Library",
     width: "40%",
     descripion:
-      "Veteran scholar in physics trained many students for all kinds of entrance examinations. He has proven himself as an able & successful administrator by establishing and running Junior College Successfully. "
-  },
-  {
-    url: "/images/facilities/bus.PNG",
-    title: "K. Madhusudhan, Academic Director",
-    width: "20%",
-    descripion:
-      "Worked as a Chemistry faculty member in Narayana , Gowtham  & Sri Gayatri Educational institutions. Total teaching experience 24 Years as Chemistry Faculty."
-  },
-  {
-    url: "/images/facilities/chip.PNG",
-    title: "M. Sadasiva Rao, Founder Director",
-    width: "40%",
-    descripion:
-      "Worked as Mathematics faculty member in Sri Chaitanya & Vignan College, Since 2000. Total Teaching experience 16 years as Mathematics faculty. "
+      "Well equipped library having latest books in engineering and allied subjects "
   },
   {
     url: "/images/facilities/computer.PNG",
-    title: "D. Sridhar, M.Sc Chemistry",
-    width: "38%",
+    title: "On-Line Browsing",
+    width: "20%",
     descripion:
-      "Total Experience : 15+ Years"
+      "Several national and international journals and magazines with on-line browsing facility"
   },
   {
     url: "/images/facilities/light.PNG",
-    title: "D. Sridhar, M.Sc Chemistry",
+    title: "Development Cell",
+    width: "40%",
+    descripion:
+      "Entrepreneurship Development Cell"
+  },
+  {
+    url: "/images/facilities/chip.PNG",
+    title: "Multi-media lab",
     width: "38%",
     descripion:
-      "Total Experience : 15+ Years"
+      "State-of-the-art computer facility and multimedia lab"
+  },
+  {
+    url: "/images/facilities/bus.PNG",
+    title: "GPS Tracking",
+    width: "38%",
+    descripion:
+      "Transportation facilities includes Hi-tech Busses with Live GPS Tracking Facilities for Safe and Convenient Journeys of your Wards"
   }
 ];
 
