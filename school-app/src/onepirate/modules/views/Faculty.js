@@ -17,6 +17,10 @@ const styles = theme => ({
     backgroundColor: "#7fc7d9", // Average color of the background image.
     backgroundPosition: "center"
   },
+  large: {
+    width: theme.spacing(7),
+    height: theme.spacing(7)
+  },
   button: {
     minWidth: 200
   },
@@ -48,7 +52,7 @@ function GallaryInfo(props) {
         const url = `${window.location.origin}${imageInfo.url}`;
         return (
           <Grid container spacing={3}>
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={3} sm={1}>
             <img
               src={url}
               width="100%"

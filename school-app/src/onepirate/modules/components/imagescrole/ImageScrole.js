@@ -9,7 +9,7 @@ class ImageScrole extends Component {
     return (
       <Carousel showThumbs={false} dynamicHeight={true} autoPlay={true}>
         <div>
-          <img src="images/testimonials/Capture.PNG" />
+          <img src="images/testimonials/test3.PNG" />
         </div>
       </Carousel>
     );
