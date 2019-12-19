@@ -14,6 +14,7 @@ class ImageScrole extends Component {
           autoPlay={true}
           showArrows={false}
           infiniteLoop={true}
+          showIndicators={false}
         >
           <div>
             <img src="images/banner1.png" />

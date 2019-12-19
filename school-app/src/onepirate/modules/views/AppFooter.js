@@ -13,7 +13,7 @@ function Copyright() {
   return (
     <React.Fragment>
       {"© "}
-      <Link color="inherit" href="https://material-ui.com/">
+      <Link color="inherit" href="/">
         Vasista schools
       </Link>{" "}
       {new Date().getFullYear()}
@@ -82,7 +82,7 @@ export default function AppFooter() {
     <Typography component="footer" className={classes.root}>
       <Container className={classes.container}>
         <Grid container spacing={5}>
-          <Grid item xs={6} sm={4}>
+          <Grid item xs={12} sm={4}>
             <Grid
               container
               direction="row"
@@ -115,21 +115,9 @@ export default function AppFooter() {
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={6} sm={4}>
-            <Typography variant="h6" marked="left" gutterBottom>
-              Legal
-            </Typography>
-            <ul className={classes.list}>
-              <li className={classes.listItem}>
-                <Link href="/">Terms</Link>
-              </li>
-              <li className={classes.listItem}>
-                <Link href="/">Privacy</Link>
-              </li>
-            </ul>
-          </Grid>
+
           {/* <Grid item xs={4} sm={6} md={2}></Grid> */}
-          <Grid item xs={12} sm={4}>
+          <Grid item xs={12} sm={8}>
             <Typography variant="h6" marked="left" gutterBottom>
               Contact Us
             </Typography>

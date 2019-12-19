@@ -39,14 +39,14 @@ function SchoolIntro(props) {
       <br></br>
       <Container>
         <Grid container spacing={3}>
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12} sm={4}>
             <img
               src={window.location.origin + "/images/campus/campus.jpg"}
               width="100%"
               // alt={this.state.selectedPost.caption.text.split("\n")[0]}
             />
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12} sm={8}>
             <Grid
               container
               spacing={3}
@@ -54,7 +54,7 @@ function SchoolIntro(props) {
               alignItems="center"
             >
               <Grid item>
-                <Typography variant="subtitle2">ABOUT US</Typography>
+                <Typography variant="h6">ABOUT US</Typography>
               </Grid>
             </Grid>
             <Divider light />
@@ -65,28 +65,37 @@ function SchoolIntro(props) {
               alignItems="center"
             >
               <Grid item>
-                <h4>Dedicated Educators</h4>
-                <Typography variant="caption">
-                  We know that learning is easier when you have an excellent
-                  teacher. That's why most of educators have achieved advanced
-                  degree in their field. Our facility are passinate about the
-                  subjects they teach and bring enthusiasam to their lessons.
+                <Typography variant="body2">
+                  <b>Vasistha</b> literally means, “best” or “most prosperous”
+                  according to Sanskrit, an Ancient and oldest language in
+                  Hinduism known to Mankind. It symbolizes the zeal to Excel in
+                  all walks of life through ‘Constant Knowledge’ and ‘Sincerity
+                  and Faith’ in Oneself. With a Vision to shape the future
+                  generations with Knowledge and instilling Confidence, Truth
+                  and Honesty as our very foundation, Vasistha College is the
+                  ‘Temple of Learning’ for shaping tomorrow’s generations.
                 </Typography>
-                <h4>First-Rate Curriculum</h4>
-                <Typography variant="caption">
-                   Are you a beginner, expert or some where in between? Not to
-                  worry! we offer a variety of high profile cources desingned to
-                  prepare you for next step.
-                </Typography>
-                <h4>Commitment to Excellence</h4>
-                <Typography variant="caption">
-                   Our mission is to embrace the persuit of excellence both
-                  inside and outside the classroom. We encourage critical
-                  thinking and emphasize the learning process over rote
-                  memorization.
+                <br />
+                <Typography variant="body2">
+                  Our Founders bring in years of Educational Excellence coupled
+                  with State-of-the-Art Infrastructure Facilities, well equipped
+                  labs, and faculty members who are eminent personalities with a
+                  quality experience. Our campus comprises of a library, hostel,
+                  canteen and dedicated area for sports, as we understand that
+                  physical and spiritual fitness is the key to one’s Well being.
                 </Typography>
               </Grid>
             </Grid>
+          </Grid>
+          <Grid item xs={12} sm={12}>
+            <Typography variant="body2">
+              At Vasistha, we believe in Overall Wellbeing, from Mental to
+              Physical wellness, hence provide all kinds of facilities to our
+              Students to prosper and Lead the next generation.
+              <br></br>We aim to provide World Class Infrastructure Facilities
+              to our Students while imparting knowledge with dexterity to
+              achieve success in all walks of life.
+            </Typography>
           </Grid>
         </Grid>
       </Container>
