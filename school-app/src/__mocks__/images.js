@@ -41,6 +41,7 @@ const images = [
       "https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?auto=format&fit=crop&w=400&q=80",
     title: "Robotics Lab",
     width: "24%",
+    link: "/roboticslab",
     descripion:
       "We know that learning is easier when you have an excellent teacher. That's why most of educators have achieved advanced degree in their field. Our facility are passinate about the subjects they teach and bring enthusiasam to their lessons."
   },
