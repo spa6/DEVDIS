@@ -10,6 +10,7 @@ const images = [
     url: "/images/classroom/classroom_1.jpg",
     title: "Class Rooms",
     width: "20%",
+    link: "/classRooms",
     descripion:
       "We know that learning is easier when you have an excellent teacher. That's why most of educators have achieved advanced degree in their field. Our facility are passinate about the subjects they teach and bring enthusiasam to their lessons."
   },
@@ -31,6 +32,7 @@ const images = [
     url: "/images/sciencelab/scienceLab.jpg",
     title: "Science Lab",
     width: "38%",
+    link: "/scienceLab",
     descripion:
       "We know that learning is easier when you have an excellent teacher. That's why most of educators have achieved advanced degree in their field. Our facility are passinate about the subjects they teach and bring enthusiasam to their lessons."
   },

@@ -14,6 +14,7 @@ import GallaryHome from "../onepirate/GallaryHome";
 import About from "../onepirate/modules/views/About";
 import Contact from "../onepirate/modules/views/Contactus";
 import ClassRooms from "../onepirate/modules/views/ClassRooms";
+import ScienceLab from "../onepirate/modules/views/ScienceLab";
 import GalleryHome from "../onepirate/GalleryHome";
 import FacultyHome from "../onepirate/FacultyHome";
 
@@ -128,7 +129,8 @@ class Controller extends Component {
           <Route path="/gallary/:id" render={GallaryHome} />
 
           <Route path="/gallery" render={GalleryHome} />
-          <Route path="/classRooms" render={ClassRooms} />
+          <Route path="/classrooms" render={ClassRooms} />
+          <Route path="/sciencelab" render={ScienceLab} />
           <Route path="/faculty" render={FacultyHome} />
           <Route exact path="/" render={Home} />
           {/* </Switch> */}

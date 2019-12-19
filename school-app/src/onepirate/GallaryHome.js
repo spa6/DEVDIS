@@ -21,9 +21,9 @@ function Index() {
     <React.Fragment>
       {/* <AppAppBar /> */}
       <Header screen={"Home"} />
-      {(id === "2")&& <Faculty id={id} />}
-      {(id === "6")&& <Facility id={id} />}
-      {(id != "2" && id != "6")&& <GallaryInfo id={id} />}
+      {id === "2" && <Faculty id={id} />}
+      {id === "6" && <Facility id={id} />}
+      {id != "2" && id != "6" && <GallaryInfo id={id} />}
       <AppFooter />
     </React.Fragment>
   );

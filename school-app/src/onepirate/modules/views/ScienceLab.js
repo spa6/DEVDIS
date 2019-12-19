@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
     }
   }
 }));
-function ClassRooms() {
+function ScienceLab() {
   const classes = useStyles();
   return (
     <React.Fragment>
@@ -39,42 +39,30 @@ function ClassRooms() {
         <Grid alignItems="center" container spacing={3}>
           <Grid item xs={3} sm={1}>
             <Avatar
-              alt="Remy Sharp"
-              src="/images/classroom/classroom_2.PNG"
+              alt="Experiment’"
+              src="/images/sciencelab/experiemt.PNG"
               className={classes.large}
             />
           </Grid>
           <Grid item xs={8} sm={5}>
             <Typography variant="caption">
-              Our Campus is spready across a sprawling area of 10 acres which
-              houses top class Infrastructure facilities never heard of before….
+              Our Science Lab offers all kinds of equipments that aid in
+              Student’s learning and inquisitiveness to ‘try-n-experiment’
+              various prototypes which will help them in ‘fail-to-succeed”
+              approach.
             </Typography>
           </Grid>
           <Grid item xs={3} sm={1}>
             <Avatar
-              alt="Remy Sharp"
-              src="/images/classroom/learning.PNG"
+              alt="Machinery"
+              src="/images/sciencelab/machinary.PNG"
               className={classes.large}
             />
           </Grid>
           <Grid item xs={8} sm={5}>
             <Typography variant="caption">
-              Each Classrooms are equipped with air-conditioners providing that
-              perfect setting that fosters learning.
-            </Typography>
-          </Grid>
-          <Grid item xs={12} sm={3}></Grid>
-          <Grid item xs={3} sm={1}>
-            <Avatar
-              alt="Remy Sharp"
-              src="/images/classroom/wifi.PNG"
-              className={classes.large}
-            />
-          </Grid>
-          <Grid item xs={8} sm={5}>
-            <Typography variant="caption">
-              Ergonomically designed high tech classrooms equipped with
-              sophisticated teaching equipments like Projectors, Wi-Fi etc.
+              We offer latest Imported machinery and infrastructure for
+              students, thus transforming them into the ‘Next Einstein’.
             </Typography>
           </Grid>
         </Grid>
@@ -85,4 +73,4 @@ function ClassRooms() {
   );
 }
 
-export default withRoot(ClassRooms);
+export default withRoot(ScienceLab);
