@@ -48,6 +48,8 @@ function GallaryInfo(props) {
       <br></br>
       
       <Container>
+        <h1 >Facilities</h1>
+        <br></br>
       <Grid container spacing={3}>
         <div className={classes.images}>
         {images.map((imageInfo, index) => {

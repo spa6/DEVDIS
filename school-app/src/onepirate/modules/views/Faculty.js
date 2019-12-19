@@ -52,7 +52,7 @@ function GallaryInfo(props) {
         const url = `${window.location.origin}${imageInfo.url}`;
         return (
           <Grid container spacing={3}>
-          <Grid item xs={3} sm={1}>
+          <Grid item xs={12} sm={3}>
             <img
               src={url}
               width="100%"
