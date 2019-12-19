@@ -4,20 +4,27 @@ import React from "react";
 import AppFooter from "./AppFooter";
 import Header from "../../../common/Header";
 import SchoolIntro from "./SchoolIntro";
+import { withStyles } from "@material-ui/core/styles";
 
-function Index() {
+const styles = theme => ({
+  body: {
+    minHeight: theme.spacing(70)
+  }
+});
+function Index(props) {
+  const { classes } = props;
   return (
     <React.Fragment>
       {/* <AppAppBar /> */}
       <Header screen={"Website"} />
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <SchoolIntro />
+      <div className="container"></div>
+      <div className={classes.body}>
+        <SchoolIntro />
+      </div>
+
       <AppFooter />
     </React.Fragment>
   );
 }
 
-export default withRoot(Index);
+export default withStyles(styles)(withRoot(Index));
