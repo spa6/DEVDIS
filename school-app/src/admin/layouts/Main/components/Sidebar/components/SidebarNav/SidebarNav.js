@@ -6,6 +6,11 @@ import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import { List, ListItem, Button, colors } from '@material-ui/core';
+import ExpansionPanel from '@material-ui/core/ExpansionPanel';
+import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
+import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
+import Typography from '@material-ui/core/Typography';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const useStyles = makeStyles(theme => ({
   root: {},
@@ -37,6 +42,10 @@ const useStyles = makeStyles(theme => ({
     '& $icon': {
       color: theme.palette.primary.main
     }
+  },
+  heading: {
+    fontSize: theme.typography.pxToRem(15),
+    fontWeight: theme.typography.fontWeightRegular,
   }
 }));
 
@@ -55,6 +64,16 @@ const SidebarNav = props => {
   const classes = useStyles();
 
   return (
+    <div className={classes.root}>
+      <ExpansionPanel>
+        <ExpansionPanelSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography className={classes.heading}>Expansion Panel 1</Typography>
+        </ExpansionPanelSummary>
+        <ExpansionPanelDetails>
     <List
       {...rest}
       className={clsx(classes.root, className)}
@@ -77,6 +96,9 @@ const SidebarNav = props => {
         </ListItem>
       ))}
     </List>
+    </ExpansionPanelDetails>
+      </ExpansionPanel>
+      </div>
   );
 };
 
