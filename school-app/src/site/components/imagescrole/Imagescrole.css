@@ -1,0 +1,33 @@
+.background > .carousel.carousel-slider {
+  height: 500px;
+}
+.background {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-size: 'cover';
+  background-repeat: 'no-repeat';
+  z-index: -2;
+}
+.scroleMobile {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .background > .carousel.carousel-slider {
+    height: 500px;
+  }
+  .ProductHero-background-73 {
+    background-image: none;
+  }
+  .scroleMobile {
+    display: inline;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  .background > .carousel.carousel-slider {
+    height: 500px;
+  }
+}

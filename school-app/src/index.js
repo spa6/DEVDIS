@@ -1,9 +1,9 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "typeface-roboto";
-import "./index.css";
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-import Controller from "./screens/Controller";
-// import Home from "./onepirate/Home";
+import * as serviceWorker from './serviceWorker';
+import App from './App';
 
-ReactDOM.render(<Controller />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById('root'));
+
+serviceWorker.unregister();
