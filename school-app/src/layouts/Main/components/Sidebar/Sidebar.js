@@ -12,7 +12,7 @@ import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import SettingsIcon from '@material-ui/icons/Settings';
 import LockOpenIcon from '@material-ui/icons/LockOpen';
 
-import { Profile, SidebarNav, UpgradePlan } from './components';
+import { Profile, SidebarNav } from './components';
 
 const useStyles = makeStyles(theme => ({
   drawer: {
@@ -42,47 +42,157 @@ const Sidebar = props => {
 
   const classes = useStyles();
 
-  const pages = [
-    {
-      title: 'Dashboard',
-      href: '/dashboard',
-      icon: <DashboardIcon />
-    },
-    {
-      title: 'Users',
-      href: '/users',
-      icon: <PeopleIcon />
-    },
-    {
-      title: 'Products',
-      href: '/products',
-      icon: <ShoppingBasketIcon />
-    },
-    {
-      title: 'Authentication',
-      href: '/sign-in',
-      icon: <LockOpenIcon />
-    },
-    {
-      title: 'Typography',
-      href: '/typography',
-      icon: <TextFieldsIcon />
-    },
-    {
-      title: 'Icons',
-      href: '/icons',
-      icon: <ImageIcon />
-    },
-    {
-      title: 'Account',
-      href: '/account',
-      icon: <AccountBoxIcon />
-    },
-    {
-      title: 'Settings',
-      href: '/settings',
-      icon: <SettingsIcon />
-    }
+  const pages = 
+    [
+      {
+        heder:"Registration",
+        expand:"true",
+        tabs:[
+          {
+            title: 'Students',
+            href: '/users',
+            icon: <PeopleIcon />
+          },
+          {
+            title: 'Teachers',
+            href: '/users',
+            icon: <PeopleIcon />
+          },
+          {
+            title: 'Staff',
+            href: '/products',
+            icon: <ShoppingBasketIcon />
+          }
+        ]
+         
+      },
+      {
+        heder:"Payroll Management",
+        expand:"false",
+        tabs:[ 
+          {
+            title: 'Fee-Configurations',
+            href: '/sign-in',
+            icon: <LockOpenIcon />
+          },
+          {
+            title: 'Fee Entry',
+            href: '/typography',
+            icon: <TextFieldsIcon />
+          },
+          {
+            title: 'Payments',
+            href: '/icons',
+            icon: <ImageIcon />
+          },
+          {
+            title: 'Fee Update',
+            href: '/account',
+            icon: <AccountBoxIcon />
+          }
+        ]
+      },
+      {
+        heder:"Attendence Management",
+        expand:"false",
+        tabs:[ 
+          {
+            title: 'Holidays',
+            href: '/typography',
+            icon: <TextFieldsIcon />
+          },
+          {
+            title: 'Attendence',
+            href: '/icons',
+            icon: <ImageIcon />
+          },
+          {
+            title: 'Leave Management',
+            href: '/account',
+            icon: <AccountBoxIcon />
+          }
+        ]
+      },
+      {
+        heder:"Examinations",
+        expand:"false",
+        tabs:[ 
+          {
+            title: 'Schudeles',
+            href: '/typography',
+            icon: <TextFieldsIcon />
+          },
+          {
+            title: 'Results',
+            href: '/icons',
+            icon: <ImageIcon />
+          }
+        ]
+      },
+      {
+        heder:"PTM",
+        expand:"false",
+        tabs:[ 
+          {
+            title: 'Config',
+            href: '/account',
+            icon: <AccountBoxIcon />
+          },
+          {
+            title: 'Review Comments',
+            href: '/settings',
+            icon: <SettingsIcon />
+          }
+        ]
+      },
+      {
+        heder:"Profile",
+        expand:"false",
+        tabs:[ 
+          {
+            title: 'Account',
+            href: '/account',
+            icon: <AccountBoxIcon />
+          },
+          {
+            title: 'Settings',
+            href: '/settings',
+            icon: <SettingsIcon />
+          }
+        ]
+      },
+      {
+        heder:"Configurations",
+        expand:"false",
+        tabs:[ 
+          {
+            title: 'Classes',
+            href: '/account',
+            icon: <AccountBoxIcon />
+          },
+          {
+            title: 'Sections',
+            href: '/settings',
+            icon: <SettingsIcon />
+          },
+          {
+            title: 'Groups',
+            href: '/settings',
+            icon: <SettingsIcon />
+          },
+          {
+            title: 'Subjects',
+            href: '/settings',
+            icon: <SettingsIcon />
+          },
+          {
+            title: 'Years',
+            href: '/settings',
+            icon: <SettingsIcon />
+          }
+        ]
+      }      
+        
   ];
 
   return (
@@ -103,7 +213,6 @@ const Sidebar = props => {
           className={classes.nav}
           pages={pages}
         />
-        <UpgradePlan />
       </div>
     </Drawer>
   );

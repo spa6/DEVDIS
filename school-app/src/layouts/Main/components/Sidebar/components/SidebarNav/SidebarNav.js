@@ -6,6 +6,12 @@ import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import { List, ListItem, Button, colors } from '@material-ui/core';
+import ExpansionPanel from '@material-ui/core/ExpansionPanel';
+import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
+import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
+import Typography from '@material-ui/core/Typography';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import DashboardIcon from '@material-ui/icons/Dashboard';
 
 const useStyles = makeStyles(theme => ({
   root: {},
@@ -37,6 +43,10 @@ const useStyles = makeStyles(theme => ({
     '& $icon': {
       color: theme.palette.primary.main
     }
+  },
+  heading: {
+    fontSize: theme.typography.pxToRem(15),
+    fontWeight: theme.typography.fontWeightRegular,
   }
 }));
 
@@ -55,28 +65,53 @@ const SidebarNav = props => {
   const classes = useStyles();
 
   return (
+    <div className={classes.root}>
+     <Button
+            activeClassName={classes.active}
+            className={classes.button}
+            component={CustomRouterLink}
+            to='/dashboard'
+          >
+            <div className={classes.icon}><DashboardIcon /></div>
+            Dashboard
+          </Button>
+       {pages.map(page => (
+          
+      <ExpansionPanel >
+        <ExpansionPanelSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography className={classes.heading}>{page.heder}</Typography>
+        </ExpansionPanelSummary>
+        <ExpansionPanelDetails>
     <List
       {...rest}
       className={clsx(classes.root, className)}
     >
-      {pages.map(page => (
+      {page.tabs.map(page1 => (
         <ListItem
           className={classes.item}
           disableGutters
-          key={page.title}
+          key={page1.title}
         >
           <Button
             activeClassName={classes.active}
             className={classes.button}
             component={CustomRouterLink}
-            to={page.href}
+            to={page1.href}
           >
-            <div className={classes.icon}>{page.icon}</div>
-            {page.title}
+            <div className={classes.icon}>{page1.icon}</div>
+            {page1.title}
           </Button>
         </ListItem>
       ))}
     </List>
+    </ExpansionPanelDetails>
+      </ExpansionPanel>
+       ))}
+      </div>
   );
 };
 
