@@ -18,7 +18,7 @@ import ScienceLab from "../onepirate/modules/views/ScienceLab";
 import RoboticsLab from "../onepirate/modules/views/RoboticsLab";
 import GalleryHome from "../onepirate/GalleryHome";
 import FacultyHome from "../onepirate/FacultyHome";
-import App from "../admin/App";
+// import App from "../admin/App";
 
 class Controller extends Component {
   constructor(props) {
@@ -122,7 +122,7 @@ class Controller extends Component {
                 )
               }
             /> */}
-          <Route exact path="/dashboard" render={props => <App />} />
+          {/* <Route exact path="/dashboard" render={props => <App />} /> */}
 
           <Route exact path="/about" render={props => <About />} />
           <Route exact path="/contact" render={props => <Contact />} />
