@@ -1,26 +1,14 @@
 import React, { Component } from "react";
 import { withStyles } from "@material-ui/core/styles";
-import SvgIcon from "@material-ui/core/SvgIcon";
 import Input from "@material-ui/core/Input";
-import TextField from "@material-ui/core/TextField";
-import InputAdornment from "@material-ui/core/InputAdornment";
-import SearchIcon from "@material-ui/icons/Search";
 import Button from "@material-ui/core/Button";
-import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import Modal from "react-modal";
-import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
 import PropTypes from "prop-types";
 import FormHelperText from "@material-ui/core/FormHelperText";
-import Snackbar from "@material-ui/core/Snackbar";
-import Menu from "@material-ui/core/Menu";
-import MenuItem from "@material-ui/core/MenuItem";
-import { Link } from "react-router-dom";
-import "./Admission.css";
-
 const loginModalStyle = {
   content: {
     top: "50%",
@@ -55,7 +43,7 @@ TabContainer.propTypes = {
   children: PropTypes.node.isRequired
 };
 
-class Admission extends Component {
+class UploadYourDetails extends Component {
   constructor() {
     super();
     this.state = {
@@ -519,4 +507,4 @@ class Admission extends Component {
   }
 }
 
-export default withStyles(styles)(Admission);
+export default withStyles(styles)(UploadYourDetails);

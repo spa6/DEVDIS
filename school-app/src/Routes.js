@@ -4,6 +4,7 @@ import { Switch, Redirect,Route } from 'react-router-dom';
 import { RouteWithLayout } from './components';
 import { Main as MainLayout, Minimal as MinimalLayout } from './layouts';
 import Home from "./site/onepirate/Home";
+import MyHome from "./site/onepirate/MyHome";
 import GallaryHome from "./site/onepirate/GallaryHome";
 import About from "./site/onepirate/modules/views/About";
 import Contact from "./site/onepirate/modules/views/Contactus";
@@ -12,6 +13,8 @@ import ScienceLab from "./site/onepirate/modules/views/ScienceLab";
 import RoboticsLab from "./site/onepirate/modules/views/RoboticsLab";
 import GalleryHome from "./site/onepirate/GalleryHome";
 import FacultyHome from "./site/onepirate/FacultyHome";
+import AboutCompany from "./site/onepirate/modules/views/AboutCompany";
+
 
 import {
   Dashboard as DashboardView,
@@ -93,8 +96,9 @@ const Routes = () => {
         exact
         layout={MinimalLayout}
         path="/not-found"
-      /> 
+      />
       <Route exact path="/home" render={Home} />
+      <Route exact path="/myhome" render={MyHome} />
       <Route exact path="/about" render={props => <About />} />
           <Route exact path="/contact" render={props => <Contact />} />
           <Route path="/gallary/:id" render={GallaryHome} />
@@ -103,6 +107,7 @@ const Routes = () => {
           <Route path="/sciencelab" render={ScienceLab} />
           <Route path="/roboticslab" render={RoboticsLab} />
           <Route path="/faculty" render={FacultyHome} />
+          <Route path="/companyinfo" render={props => <AboutCompany/>} />
       <Redirect to="/not-found" />
     </Switch>
   );
