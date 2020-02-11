@@ -17,16 +17,19 @@ class ImageScrole extends Component {
           showIndicators={false}
         >
           <div>
-            <img src="images/banner1.jpg" />
+            <img src="images/kids1.png" />
           </div>
           <div>
-            <img src="images/banner2.jpg" />
+            <img src="images/kids2.jpg" />
           </div>
           <div>
-            <img src="images/banner3.jpg" />
+            <img src="images/kids3.jpg" />
           </div>
           <div>
-            <img src="images/banner4.jpg" />
+            <img src="images/kids4.jpg" />
+          </div>
+          <div>
+            <img src="images/kids5.jpg" />
           </div>
         </Carousel>
       </div>

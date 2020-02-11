@@ -31,7 +31,7 @@ function CompanyIntro(props) {
         <Grid container spacing={3}>
           <Grid item xs={12} sm={4}>
             <img
-              src={window.location.origin + "/images/campus/CompanyLogo.jpg"}
+              src={window.location.origin + "/images/campus/MyLogo.jpg"}
               width="100%"
               // alt={this.state.selectedPost.caption.text.split("\n")[0]}
             />
@@ -44,7 +44,7 @@ function CompanyIntro(props) {
               alignItems="center"
             >
               <Grid item>
-                <Typography variant="h6">ABOUT US</Typography>
+                <Typography variant="h5">ABOUT US</Typography>
               </Grid>
             </Grid>
             <Divider light />
@@ -56,28 +56,21 @@ function CompanyIntro(props) {
             >
               <Grid item>
                 <Typography variant="body2">
-                  <b>DEVDIS</b>  Rise a simple yet powerful word that defines ‘DEVDIS’ and gives the Brand, a meaning and purpose.
-                  It instills an ambition and attitude that ‘we can achieve whatever we set our minds to’ and declares who we are,
-                  how we operate, what we believe in and where we want to be. In tune with this philosophy,
-                  we bring you handpicked stories of excellence at DEVDIS across all-India locations.
+                <br/>
+                  <b style={{ color: 'green' }}>MY FOUNDATIONS</b> is a non-profit, non-governmental organization committed to helping children who are suffering the effects of poverty, disease, natural disaster, famine, abuse, civil strife and war. The heart and soul of Children's Fund is YOU. Through the generosity of our partners and donors, we are making a difference. Together, we are changing the lives of the impoverished and suffering children.
                 </Typography>
                 <br />
                 <Typography variant="body2">
-                  A global leader in consulting, technology services and digital transformation,
-                  DEVDIS is at the forefront of innovation to address the entire breadth of clients’ opportunities
-                  in the evolving world of cloud, digital and platforms.
+                  We committed to high standards of accountability and transparency which is an expression of our core value on 'stewardship'. This is because we believe that we work effectively for the well-being of children.
+                  We know the very best thing for a child is to be part of a loving family—it’s where they thrive. That’s why everything we do is designed to accomplish just that.
+                  We are with special motto to help the needy, poor and uneducated people.
                 </Typography>
               </Grid>
             </Grid>
           </Grid>
           <Grid item xs={12} sm={12}>
             <Typography variant="body2">
-              At DEVDIS, we believe in Overall Wellbeing, from Mental to
-              Physical wellness, hence provide all kinds of facilities to our
-              Employees to prosper and Lead the next generation.
-              <br></br>We aim to provide World Class Infrastructure Facilities
-              to our Employees while imparting knowledge with dexterity to
-              achieve success in all walks of life.
+              At <b style={{ color: 'green' }}>MY FOUNDATIONS</b>, We have our policies, procedures, systems, practices, work culture and audits well in place to reflect our commitment to accountability and transparency. We endeavors to convey a public image that conforms to reality and speaks and acts with diligent honesty. With the power of the Almighty, we intend to pursue excellence beyond compliance, in all aspects of our work - In governance, management, operations and administration.
             </Typography>
           </Grid>
         </Grid>

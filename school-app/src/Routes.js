@@ -14,6 +14,7 @@ import RoboticsLab from "./site/onepirate/modules/views/RoboticsLab";
 import GalleryHome from "./site/onepirate/GalleryHome";
 import FacultyHome from "./site/onepirate/FacultyHome";
 import AboutCompany from "./site/onepirate/modules/views/AboutCompany";
+import CompanyIntro from "./site/onepirate/modules/views/CompanyIntro";
 
 
 import {
@@ -97,18 +98,8 @@ const Routes = () => {
         layout={MinimalLayout}
         path="/not-found"
       />
-      <Route exact path="/home" render={Home} />
       <Route exact path="/myhome" render={MyHome} />
-      <Route exact path="/about" render={props => <About />} />
-          <Route exact path="/contact" render={props => <Contact />} />
-          <Route path="/gallary/:id" render={GallaryHome} />
-          <Route path="/gallery" render={GalleryHome} />
-          <Route path="/classrooms" render={ClassRooms} />
-          <Route path="/sciencelab" render={ScienceLab} />
-          <Route path="/roboticslab" render={RoboticsLab} />
-          <Route path="/faculty" render={FacultyHome} />
-          <Route path="/companyinfo" render={props => <AboutCompany/>} />
-      <Redirect to="/not-found" />
+      <Route path="/companyinfo" render={props => <AboutCompany/>} />
     </Switch>
   );
 };

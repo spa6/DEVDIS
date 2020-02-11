@@ -19,16 +19,18 @@ const styles = theme => ({
   },
   menuLink: {
     textDecoration: "none",
+    fontSize:"16px",
+    fontWeight:"bold",
     color: "white",
     paddingLeft: 10,
     marginRight: "1%",
     "&:hover": {
-      color: "#007bff"
+      color: "orange"
     }
   },
   menuMobileLink: {
     textDecoration: "none",
-    color: "black",
+    color: "white",
     // marginRight: "1%",
     "&:hover": {
       color: "#007bff"
@@ -63,7 +65,7 @@ const styles = theme => ({
     height: 40
   },
   appHeader: {
-    backgroundColor: "#263238"
+    backgroundColor: "#0073ff"
   },
   hr: {
     height: "1.5px",
@@ -99,27 +101,27 @@ class MyHeader extends Component {
               <h1>VASISHTA SCHOOLS</h1>
             </Link> */}
 
-            <Link style={{ textDecoration: "none", color: "white" }} to="/">
-              <span className="header-logo">DEVDIS</span>
+            <Link style={{ textDecoration: "none", color: "white",fontSize:"16px",fontWeight:"bold" }} to="/">
+              <span className="header-logo">MY FOUNDATIONS</span>
             </Link>
             <div className={classes.grow1}></div>
             <div className={menuClasses}>
               <Link className={classes.menuLink} to="/">
                 HOME
               </Link>
-              <Link className={classes.menuLink} to="/industries">
-                INDUSTRIES
-              </Link>
-              <Link className={classes.menuLink} to="/services">
-                SERVICES
+              <Link className={classes.menuLink} to="/companyinfo">
+                ABOUT US
               </Link>
               <Link className={classes.menuLink} to="/companyinfo">
-                DISCOVER DEVDIS
+                OUR MISSIONS
               </Link>
-              <Link className={classes.menuLink} to="/careers">
-                CAREERS
+              <Link className={classes.menuLink} to="/companyinfo">
+                OUR POLICIES
               </Link>
-              <Link className={classes.menuLink} to="/contact">
+              <Link className={classes.menuLink} to="/companyinfo">
+                OUR SERVICES
+              </Link>
+              <Link className={classes.menuLink} to="/companyinfo">
                 CONTACT US
               </Link>
             </div>
@@ -149,37 +151,31 @@ class MyHeader extends Component {
                   </MenuItem>
                   <div className={classes.hr} />
                   <MenuItem>
-                    <Link className={classes.menuMobileLink} to="/about">
+                    <Link className={classes.menuMobileLink} to="/companyinfo">
                       ABOUT US
                     </Link>
                   </MenuItem>
                   <div className={classes.hr} />
                   <MenuItem>
-                    <Link className={classes.menuMobileLink} to="/gallery">
-                      GALLARY
+                    <Link className={classes.menuMobileLink} to="/companyinfo">
+                      OUR MISSIONS
                     </Link>
                   </MenuItem>
                   <div className={classes.hr} />
                   <MenuItem>
-                    <Link className={classes.menuMobileLink} to="/faculty">
-                      FACULTY
+                    <Link className={classes.menuMobileLink} to="/companyinfo">
+                      OUR POLICIES
                     </Link>
                   </MenuItem>
                   <div className={classes.hr} />
                   <MenuItem>
-                    <Link className={classes.menuMobileLink} to="/blog">
-                      BLOG
+                    <Link className={classes.menuMobileLink} to="/companyinfo">
+                      OUR SERVICES
                     </Link>
                   </MenuItem>
                   <div className={classes.hr} />
                   <MenuItem>
-                    <Link className={classes.menuMobileLink} to="/contact">
-                      CAREERS
-                    </Link>
-                  </MenuItem>
-                  <div className={classes.hr} />
-                  <MenuItem>
-                    <Link className={classes.menuMobileLink} to="/contact">
+                    <Link className={classes.menuMobileLink} to="/companyinfo">
                       CONTACT US
                     </Link>
                   </MenuItem>
