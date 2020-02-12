@@ -62,16 +62,16 @@ class CompanyServices extends Component {
           src={backgroundImage}
           alt="increase priority"
         />
-        <Typography color="inherit" align="center" variant="h2" marked="center">
-          Where Passion Meets Everything
+        <Typography color="inherit" align="center" variant="h3" marked="center">
+          Transform the lives of orphaned children
         </Typography>
         <Typography
           color="inherit"
           align="center"
-          variant="h5"
+          variant="h3"
           className={classes.h5}
         >
-          Building a community of life long careers!
+          Change their life story
         </Typography>
         <Button
           color="secondary"
@@ -81,7 +81,7 @@ class CompanyServices extends Component {
           component="a"
           onClick={this.openLoginModalHandler}
         >
-          SEND YOUR DETAILS
+          DONATE NOW
         </Button>
         <UploadYourDetails
           modalIsOpen={modalIsOpen}
